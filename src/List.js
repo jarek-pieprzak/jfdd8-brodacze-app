@@ -11,8 +11,7 @@ class List extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log('SUBMIT');
-    this.setState({
+      this.setState({
       tasks: this.state.tasks.concat({
         id: this.state.tasks.map(
           task => task.id
