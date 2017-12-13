@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 import './index.css';
 
 import App from './App';
-import Wykresy from './Wykresy'
+import Wykresy from './DonutChart'
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -24,7 +24,7 @@ ReactDOM.render(
 
       <switch>
         <Route exact path="/" component={App}/>
-        <Route path="/Wykresy" component={Wykresy}/>
+        <Route path="/DonutChart" component={Wykresy}/>
       </switch>
 
       <p>&copy; 2017 BrodaczeGroup</p>
