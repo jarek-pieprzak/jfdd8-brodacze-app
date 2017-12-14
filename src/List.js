@@ -4,10 +4,9 @@ class List extends Component {
 
   state = {
     taskInputValue: '',
-    tasks: [
-
-    ]
-  };
+    tasks: [],
+    checkedTaskIds: []
+    }
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -40,6 +39,34 @@ class List extends Component {
     })
   };
 
+  handleCheckboxChange = () => {
+    this.setState({
+      incomeChecked: !this.state.incomeChecked
+    })
+  };
+
+  handleCheckboxChange = () => {
+    this.setState({
+      outcomeChecked: !this.state.outcomeChecked
+    })
+  };
+
+  handleCheckboxChange = (event) => {
+    const taskId = parseInt(event.target.dataset.taskId, 10);
+
+    const taskIsChecked = this.state.checkedTaskIds.find(
+      item => item === taskId
+    ) !== undefined;
+
+    const checkedTaskIds = this.state.checkedTaskIds.filter(
+      item => item !== taskId
+    );
+
+    this.setState({
+      checkedTaskIds: taskIsChecked ? checkedTaskIds : this.state.checkedTaskIds.concat(taskId)
+    })
+  };
+
   render() {
     return (
       <div>
@@ -47,11 +74,26 @@ class List extends Component {
 
         <form onSubmit={this.handleSubmit}>
           <input
-            value={this.state.taskInputValue}
-            onChange={this.handleChange}
-          />
-          <button>Wpływ</button>
-          <button>Wydatek</button>
+              value={this.state.taskInputValue}
+              onChange={this.handleChange}
+            />
+          <button>WPROWADŹ</button>
+          <div>
+            <label>
+              <input
+                type="checkbox"
+                onChange={this.handleCheckboxChange}
+                checked={this.state.incomeChecked}
+              /> + wpływy;
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                onChange={this.handleCheckboxChange}
+                checked={this.state.outcomeChecked}
+              /> - wydatki
+            </label>
+          </div>
         </form>
 
         <ul>
