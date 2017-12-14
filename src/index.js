@@ -9,6 +9,7 @@ import {
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
+import 'react-big-calendar/lib/css/react-big-calendar.css'
 import './index.css';
 import App from './App';
 import Calendar from './Calendar';
