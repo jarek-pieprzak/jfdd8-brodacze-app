@@ -56,7 +56,7 @@ class DonutChart extends Component {
       {
         labels: ['foo', 'bar'],
         datasets: [{
-          data: [100, 200]
+          data: [100, 400]
         }]
       }
     )
