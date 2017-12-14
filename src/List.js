@@ -5,7 +5,8 @@ class List extends Component {
   state = {
     taskInputValue: '',
     tasks: [],
-    checkedTaskIds: []
+    checkedTaskIds: [],
+    incomeChecked: false
     }
 
   handleSubmit = (event) => {
@@ -18,7 +19,8 @@ class List extends Component {
           (biggest, next) => Math.max(biggest, next),
           0
         ) + 1,
-        content: this.state.taskInputValue
+        content: this.state.taskInputValue,
+        isIncome: this.state.incomeChecked
       }),
       taskInputValue: ''
     });
@@ -39,31 +41,9 @@ class List extends Component {
     })
   };
 
-  handleCheckboxChange = () => {
+  handleIncomeCheckboxChange = () => {
     this.setState({
       incomeChecked: !this.state.incomeChecked
-    })
-  };
-
-  handleCheckboxChange = () => {
-    this.setState({
-      outcomeChecked: !this.state.outcomeChecked
-    })
-  };
-
-  handleCheckboxChange = (event) => {
-    const taskId = parseInt(event.target.dataset.taskId, 10);
-
-    const taskIsChecked = this.state.checkedTaskIds.find(
-      item => item === taskId
-    ) !== undefined;
-
-    const checkedTaskIds = this.state.checkedTaskIds.filter(
-      item => item !== taskId
-    );
-
-    this.setState({
-      checkedTaskIds: taskIsChecked ? checkedTaskIds : this.state.checkedTaskIds.concat(taskId)
     })
   };
 
@@ -82,14 +62,17 @@ class List extends Component {
             <label>
               <input
                 type="checkbox"
-                onChange={this.handleCheckboxChange}
+                onChange={this.handleIncomeCheckboxChange}
                 checked={this.state.incomeChecked}
               /> + wpływy;
+              {/*{*/}
+                {/*task.isDone === true ? '+' : null*/}
+              {/*}*/}
             </label>
             <label>
               <input
                 type="checkbox"
-                onChange={this.handleCheckboxChange}
+                onChange={this.handleOutcomeCheckboxChange}
                 checked={this.state.outcomeChecked}
               /> - wydatki
             </label>
@@ -102,6 +85,10 @@ class List extends Component {
               task => (
                 <li key={task.id}>
                   {task.content}
+
+                  {
+                    task.isIncome === true ? '+' : null
+                  }
 
                   <button
                     data-task-id={task.id}
