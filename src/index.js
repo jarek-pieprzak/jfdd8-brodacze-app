@@ -20,10 +20,10 @@ import registerServiceWorker from './registerServiceWorker';
 ReactDOM.render(
   <Router>
     <div>
-      <switch>
+      <Switch>
         <Route exact path="/" component={App}/>
         <Route path="/donut" component={DonutChart}/>
-      </switch>
+      </Switch>
 
       <p>&copy; 2017 BrodaczeGroup</p>
     </div>
