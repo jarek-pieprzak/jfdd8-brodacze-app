@@ -87,7 +87,7 @@ class List extends Component {
                   {task.content}
 
                   {
-                    task.isIncome === true ? '+' : null
+                    task.isIncome === true ? ' + ' : null
                   }
 
                   <button
