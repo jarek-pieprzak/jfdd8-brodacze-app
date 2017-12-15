@@ -81,14 +81,26 @@ class DonutChart extends Component {
 
     console.log(categories)
 
-    const categoriesWithSums = categories.map()
+    const categoriesData = categories.map(
+      category => this.state.entries.filter(
+          entry => entry.category === category
+        ).reduce((total, next) => total + next.value, 0)
 
-    console.log(categoriesWithSums)
+    )
+
+    // console.log(categoriesWithSums)
+
+    const data = {
+      label: categories,
+      datasets: [{
+        data: categoriesData
+      }]
+    }
 
     return (
       <div>
         <h2>Doughnut Example</h2>
-        {/*<Doughnut data={data}/>*/}
+        <Doughnut data={data}/>
       </div>
     );
   }
