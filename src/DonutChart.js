@@ -91,7 +91,7 @@ class DonutChart extends Component {
     // console.log(categoriesWithSums)
 
     const data = {
-      label: categories,
+      labels: categories,
       datasets: [{
         data: categoriesData
       }]
