@@ -55,24 +55,71 @@ class List extends Component {
 
         <form onSubmit={this.handleSubmit}>
           <input
-              value={this.state.taskInputValue}
-              onChange={this.handleChange}
-            />
+            value={this.state.taskInputValue}
+            onChange={this.handleChange}
+          />
           <button>WPROWADŹ</button>
           <div>
             <label>
               <input type="radio" name="digits"
-                onChange={this.handleIncomeCheckboxChange}
-                checked={this.state.incomeChecked}
+                     onChange={this.handleIncomeCheckboxChange}
+                     checked={this.state.incomeChecked}
               /> + wpływy;
             </label>
             <label>
               <input type="radio" name="digits"
-                onChange={this.handleOutcomeInputChange}
-                checked={this.state.outcomeChecked}
+                     onChange={this.handleOutcomeInputChange}
+                     checked={this.state.outcomeChecked}
               /> - wydatki
             </label>
           </div>
+        </form>
+
+        <form action="Grupy wydatków">Grupy wydatków
+          <select name="Wydatki">
+            <optgroup label="Spożywcze">
+              <option>Podgrupa S</option>
+              <option>Podgrupa S</option>
+              <option>Podgrupa S</option>
+              <option>Podgrupa S</option>
+              <option>Podgrupa S</option>
+              <option>Podgrupa S</option>
+              <option>Podgrupa S</option>
+              <option>Podgrupa S</option>
+            </optgroup>
+            <optgroup label="Chemia">
+              <option>Podgrupa CH</option>
+              <option>Podgrupa CH</option>
+              <option>Podgrupa CH</option>
+              <option>Podgrupa CH</option>
+              <option>Podgrupa CH</option>
+              <option>Podgrupa CH</option>
+              <option>Podgrupa CH</option>
+              <option>Podgrupa CH</option>
+            </optgroup>
+            <optgroup label="Rozrywka">
+              <option>Podgrupa R</option>
+              <option>Podgrupa R</option>
+              <option>Podgrupa R</option>
+              <option>Podgrupa R</option>
+              <option>Podgrupa R</option>
+              <option>Podgrupa R</option>
+              <option>Podgrupa R</option>
+              <option>Podgrupa R</option>
+              <option>Podgrupa R</option>
+            </optgroup>
+            <optgroup label="Edukacja">
+              <option>Podgrupa E</option>
+              <option>Podgrupa E</option>
+              <option>Podgrupa E</option>
+              <option>Podgrupa E</option>
+              <option>Podgrupa E</option>
+              <option>Podgrupa E</option>
+              <option>Podgrupa E</option>
+              <option>Podgrupa E</option>
+              <option>Podgrupa E</option>
+            </optgroup>
+          </select>
         </form>
 
         <ul>
