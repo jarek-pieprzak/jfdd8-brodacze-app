@@ -29,7 +29,7 @@ class DonutChart extends Component {
         id: 1,
         title: 'Kupiłem fryty',
         category: 'food',
-        value: 10,
+        value: 160,
         isIncome: false
       },
       {
@@ -42,9 +42,16 @@ class DonutChart extends Component {
       {
         id: 3,
         title: 'Hajs od bosa',
-        value: 10000,
+        value: 100,
         category: 'bos',
         isIncome: true
+      },
+      {
+        id: 4,
+        title: 'Kupiłem burgiera',
+        category: 'food',
+        value: 170,
+        isIncome: false
       }
     ]
   }
@@ -52,14 +59,22 @@ class DonutChart extends Component {
   render() {
 
     const data = this.state.entries.reduce(
-      (result, next) => result,
-      {
-        labels: ['foo', 'bar'],
+      (result, next) => ({
+        ...result,
+        labels: result.labels.concat(next.category),
         datasets: [{
-          data: [100, 400]
+          data: result.datasets[0].data.concat(next.value)
+        }]
+      }),
+      {
+        labels: [],
+        datasets: [{
+          data: []
         }]
       }
     )
+
+
 
     return (
       <div>
