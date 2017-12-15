@@ -58,28 +58,37 @@ class DonutChart extends Component {
 
   render() {
 
-    const data = this.state.entries.reduce(
-      (result, next) => ({
-        ...result,
-        labels: result.labels.concat(next.category),
-        datasets: [{
-          data: result.datasets[0].data.concat(next.value)
-        }]
-      }),
-      {
-        labels: [],
-        datasets: [{
-          data: []
-        }]
-      }
-    )
+    // const data = this.state.entries.reduce(
+    //   (result, next) => ({
+    //     ...result,
+    //     labels: result.labels.concat(next.category),
+    //     datasets: [{
+    //       data: result.datasets[0].data.concat(next.value)
+    //     }]
+    //   }),
+    //   {
+    //     labels: [],
+    //     datasets: [{
+    //       data: []
+    //     }]
+    //   }
+    // )
 
+    const categories = this.state.entries.reduce(
+      (categories, next) => categories.filter(
+        category => category !== next.category
+      ).concat(next.category), []);
 
+    console.log(categories)
+
+    const categoriesWithSums = categories.map()
+
+    console.log(categoriesWithSums)
 
     return (
       <div>
         <h2>Doughnut Example</h2>
-        <Doughnut data={data}/>
+        {/*<Doughnut data={data}/>*/}
       </div>
     );
   }
