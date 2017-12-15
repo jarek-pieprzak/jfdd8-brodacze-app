@@ -6,7 +6,8 @@ class List extends Component {
     taskInputValue: '',
     tasks: [],
     checkedTaskIds: [],
-    incomeChecked: false
+    // incomeChecked: false,
+    outcomeChecked: false
     }
 
   handleSubmit = (event) => {
@@ -20,7 +21,7 @@ class List extends Component {
           0
         ) + 1,
         content: this.state.taskInputValue,
-        isIncome: this.state.incomeChecked
+        isOutcome: this.state.outcomeChecked
       }),
       taskInputValue: ''
     });
@@ -41,9 +42,9 @@ class List extends Component {
     })
   };
 
-  handleIncomeCheckboxChange = () => {
+  handleOutcomeInputChange = () => {
     this.setState({
-      incomeChecked: !this.state.incomeChecked
+      outcomeChecked: !this.state.outcomeChecked
     })
   };
 
@@ -60,19 +61,14 @@ class List extends Component {
           <button>WPROWADŹ</button>
           <div>
             <label>
-              <input
-                type="checkbox"
+              <input type="radio" name="digits"
                 onChange={this.handleIncomeCheckboxChange}
                 checked={this.state.incomeChecked}
               /> + wpływy;
-              {/*{*/}
-                {/*task.isDone === true ? '+' : null*/}
-              {/*}*/}
             </label>
             <label>
-              <input
-                type="checkbox"
-                onChange={this.handleOutcomeCheckboxChange}
+              <input type="radio" name="digits"
+                onChange={this.handleOutcomeInputChange}
                 checked={this.state.outcomeChecked}
               /> - wydatki
             </label>
@@ -87,7 +83,7 @@ class List extends Component {
                   {task.content}
 
                   {
-                    task.isIncome === true ? ' + ' : null
+                    task.isOutcome === true ? ' - ' : null
                   }
 
                   <button
