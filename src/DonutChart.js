@@ -52,6 +52,13 @@ class DonutChart extends Component {
         category: 'food',
         value: 170,
         isIncome: false
+      },
+      {
+        id: 4,
+        title: 'Bilet do Wejcherowa',
+        category: 'transport',
+        value: 200,
+        isIncome: false
       }
     ]
   }
@@ -86,16 +93,22 @@ class DonutChart extends Component {
           entry => entry.category === category
         ).reduce((total, next) => total + next.value, 0)
 
-    )
+    );
 
     // console.log(categoriesWithSums)
+
+    const colors = {
+      'food': 'blue'
+    }
 
     const data = {
       labels: categories,
       datasets: [{
-        data: categoriesData
-      }]
-    }
+        data: categoriesData,
+        backgroundColor: categories.map(category => colors[category] || ('#' + Math.floor(Math.random() * 255).toString(16).repeat(3)) )
+      }],
+      // hoverBackgroundColor:
+    };
 
     return (
       <div>
