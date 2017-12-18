@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import BigCalendar from 'react-big-calendar';
-import events from 'events';
+import events from './EventsDefault';
 
 import moment from 'moment';
 
@@ -13,20 +13,16 @@ let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k]);
 class Calendar extends Component {
   render(){
     return (
+
+      <div style = {{height:600}}>
       <BigCalendar
         {...this.props}
-        events={[
-          {
-            'title': 'All Day Event very long title',
-            'allDay': true,
-            'start': new Date(2017, 11, 0),
-            'end': new Date(2017, 11, 1)
-          }
-        ]}
+        events={events}
         views={allViews}
-        step={60}
-        defaultDate={new Date(2017, 11, 1)}
+        step={30}
+        defaultDate={new Date()}
       />
+        </div>
     )
   }
 };
