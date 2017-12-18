@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 import classnames from 'classnames';
 import DonutChart from './DonutChart'
 import Bar from './Bar'
 
-export default class Example extends React.Component {
+class Charts extends React.Component {
   constructor(props) {
     super(props);
 
@@ -62,3 +62,5 @@ export default class Example extends React.Component {
     );
   }
 }
+
+export default Charts
