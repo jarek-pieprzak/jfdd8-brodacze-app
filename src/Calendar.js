@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import BigCalendar from 'react-big-calendar';
-import events from './EventsDefault';
+import events from './events.js';
 
 import moment from 'moment';
 
