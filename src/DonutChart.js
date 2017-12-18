@@ -28,14 +28,14 @@ class DonutChart extends Component {
       {
         id: 1,
         title: 'Kupiłem fryty',
-        category: 'food',
+        category: 'Relax',
         value: 160,
         isIncome: false
       },
       {
         id: 2,
         title: 'Taxi',
-        category: 'commute',
+        category: 'Commute',
         value: 100,
         isIncome: false
       },
@@ -43,23 +43,44 @@ class DonutChart extends Component {
         id: 3,
         title: 'Hajs od bosa',
         value: 100,
-        category: 'bos',
+        category: 'Health, hygiene and chemistry',
         isIncome: true
       },
       {
         id: 4,
         title: 'Kupiłem burgiera',
-        category: 'food',
+        category: 'Food',
         value: 170,
         isIncome: false
       },
       {
         id: 4,
-        title: 'Bilet do Wejcherowa',
-        category: 'transport',
-        value: 200,
+        title: 'Kupiłem burgiera',
+        category: 'Flat',
+        value: 170,
         isIncome: false
-      }
+      },
+      {
+        id: 4,
+        title: 'Kupiłem burgiera',
+        category: 'Other fees and bills',
+        value: 170,
+        isIncome: false
+      },
+      {
+        id: 4,
+        title: 'Kupiłem burgiera',
+        category: 'Cloth',
+        value: 170,
+        isIncome: false
+      },
+      {
+        id: 4,
+        title: 'Kupiłem burgiera',
+        category: 'Other expenses',
+        value: 170,
+        isIncome: false
+      },
     ]
   }
 
@@ -98,7 +119,14 @@ class DonutChart extends Component {
     // console.log(categoriesWithSums)
 
     const colors = {
-      'food': 'blue'
+      'Food': '#C0FC1E',
+      'Commute': '#FF9800',
+      'Health, hygiene and chemistry': '#FF3400',
+      'Relax': '#F5FF1B',
+      'Flat': '#B30046',
+      'Other fees and bills': '#5300A4',
+      'Cloth': '#0089D0',
+      'Other expenses': '#40BF35',
     }
 
     const data = {
