@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Popover, PopoverHeader, PopoverBody } from 'reactstrap';
+import { Button, Popover as P, PopoverHeader, PopoverBody } from 'reactstrap';
 
 class Popover extends Component {
   constructor(props) {
@@ -20,17 +20,19 @@ class Popover extends Component {
   render() {
     return (
       <div>
-        <Button id="Popover1" onClick={this.toggle}>
+        <Button
+          id="Popover1"
+          onClick={this.toggle}>
           +
         </Button>
-        <Popover
+        <P
           placement="bottom"
           isOpen={this.state.popoverOpen}
           target="Popover1"
           toggle={this.toggle}>
           <PopoverHeader>Budget</PopoverHeader>
           <PopoverBody>(wprowadzanie danych Lukasza)</PopoverBody>
-        </Popover>
+        </P>
       </div>
     );
   }
