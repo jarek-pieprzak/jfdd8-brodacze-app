@@ -30,7 +30,7 @@ class Charts extends React.Component {
               className={classnames({ active: this.state.activeTab === '1' })}
               onClick={() => { this.toggle('1'); }}
             >
-              Tab1
+              Wykres kołowy
             </NavLink>
           </NavItem>
           <NavItem>
@@ -38,7 +38,7 @@ class Charts extends React.Component {
               className={classnames({ active: this.state.activeTab === '2' })}
               onClick={() => { this.toggle('2'); }}
             >
-              Moar Tabs
+              Wykres słupkowy
             </NavLink>
           </NavItem>
         </Nav>

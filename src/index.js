@@ -23,9 +23,9 @@ import Popover from './Popover';
 ReactDOM.render(
   <Router>
     <div>
-  <Popover />,
+      <Popover />
+      <Charts/>
       <Switch>
-        <Route exact path="/" component={App}/>
         <Route exact path="/" component={App}/>
         <Route path="/donut" component={DonutChart}/>
         <Route path="/bar" component={Bar}/>

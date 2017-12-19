@@ -147,4 +147,5 @@ class DonutChart extends Component {
   }
 }
 
+
 export default DonutChart
