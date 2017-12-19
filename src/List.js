@@ -6,7 +6,6 @@ class List extends Component {
     taskInputValue: '',
     tasks: [],
     checkedTaskIds: [],
-    // incomeChecked: false,
     outcomeChecked: false
     }
 
@@ -75,46 +74,34 @@ class List extends Component {
           </div>
         </form>
 
-        <form action="Grupy wydatków">Grupy wydatków
+        <form action="Expenses">Expenses
           <select name="Wydatki">
-            <optgroup label="Spożywcze">
-              <option>Podgrupa S</option>
-              <option>Podgrupa S</option>
-              <option>Podgrupa S</option>
-              <option>Podgrupa S</option>
-              <option>Podgrupa S</option>
-              <option>Podgrupa S</option>
-              <option>Podgrupa S</option>
-              <option>Podgrupa S</option>
-            </optgroup>
-            <optgroup label="Chemia">
-              <option>Podgrupa CH</option>
-              <option>Podgrupa CH</option>
-              <option>Podgrupa CH</option>
-              <option>Podgrupa CH</option>
-              <option>Podgrupa CH</option>
-              <option>Podgrupa CH</option>
-              <option>Podgrupa CH</option>
-              <option>Podgrupa CH</option>
-            </optgroup>
-            <optgroup label="Rozrywka">
-              <option>Podgrupa R</option>
-              <option>Podgrupa R</option>
-              <option>Podgrupa R</option>
-              <option>Podgrupa R</option>
-              <option>Podgrupa R</option>
-              <option>Podgrupa R</option>
+            <optgroup label="Flat">
               <option>Podgrupa R</option>
               <option>Podgrupa R</option>
               <option>Podgrupa R</option>
             </optgroup>
-            <optgroup label="Edukacja">
+            <optgroup label="Food">
               <option>Podgrupa E</option>
               <option>Podgrupa E</option>
               <option>Podgrupa E</option>
+            </optgroup>
+            <optgroup label="Health, Hygiene and Chemistry">
               <option>Podgrupa E</option>
               <option>Podgrupa E</option>
               <option>Podgrupa E</option>
+            </optgroup>
+            <optgroup label="Other Expencses">
+              <option>Podgrupa E</option>
+              <option>Podgrupa E</option>
+              <option>Podgrupa E</option>
+            </optgroup>
+            <optgroup label="Other fees and bils">
+              <option>Podgrupa E</option>
+              <option>Podgrupa E</option>
+              <option>Podgrupa E</option>
+            </optgroup>
+            <optgroup label="Relax">
               <option>Podgrupa E</option>
               <option>Podgrupa E</option>
               <option>Podgrupa E</option>

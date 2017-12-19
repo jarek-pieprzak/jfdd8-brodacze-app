@@ -14,6 +14,7 @@ import './index.css';
 import App from './App';
 import DonutChart from './DonutChart'
 import Bar from './Bar'
+import List from './List'
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -23,8 +24,10 @@ ReactDOM.render(
     <div>
       <Switch>
         <Route exact path="/" component={App}/>
+        <Route path="/List" component={List}/>
         <Route path="/donut" component={DonutChart}/>
         <Route path="/bar" component={Bar}/>
+
       </Switch>
 
       <p>&copy; 2017 BrodaczeGroup</p>
