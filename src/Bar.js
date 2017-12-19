@@ -15,84 +15,26 @@ const data = {
   ]
 };
 
-// class Bar extends Component {
-//   state = {
-//     entries: [
-//       {
-//         id: 1,
-//         title: 'Kupiłem fryty',
-//         category: 'Relax',
-//         value: 160,
-//         isIncome: false
-//       },
-//       {
-//         id: 2,
-//         title: 'Taxi',
-//         category: 'Commute',
-//         value: 100,
-//         isIncome: false
-//       },
-//       {
-//         id: 3,
-//         title: 'Hajs od bosa',
-//         value: 100,
-//         category: 'Health, hygiene and chemistry',
-//         isIncome: true
-//       },
-//       {
-//         id: 4,
-//         title: 'Kupiłem burgiera',
-//         category: 'Food',
-//         value: 170,
-//         isIncome: false
-//       },
-//       {
-//         id: 4,
-//         title: 'Kupiłem burgiera',
-//         category: 'Flat',
-//         value: 170,
-//         isIncome: false
-//       },
-//       {
-//         id: 4,
-//         title: 'Kupiłem burgiera',
-//         category: 'Other fees and bills',
-//         value: 170,
-//         isIncome: false
-//       },
-//       {
-//         id: 4,
-//         title: 'Kupiłem burgiera',
-//         category: 'Cloth',
-//         value: 170,
-//         isIncome: false
-//       },
-//       {
-//         id: 4,
-//         title: 'Kupiłem burgiera',
-//         category: 'Other expenses',
-//         value: 170,
-//         isIncome: false
-//       },
-//     ]
-//   }
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// }
+
+  return (
+    <div>
+      <h2>Bar Example (custom size)</h2>
+      <Bar
+        data={data}
+        width={100}
+        height={50}
+        options={{
+          maintainAspectRatio: false
+        }}
+      />
+    </div>
+  );
 
 
 
 
 
 export default Bar
-
 
 
 
