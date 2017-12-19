@@ -11,17 +11,19 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 
 import './index.css';
 
+import registerServiceWorker from './registerServiceWorker';
+
 import App from './App';
 import Charts from './Charts'
 import DonutChart from './DonutChart'
 import Bar from './Bar'
-
-import registerServiceWorker from './registerServiceWorker';
+import Popover from './Popover';
 
 
 ReactDOM.render(
   <Router>
     <div>
+  <Popover />,
       <Switch>
         <Route exact path="/" component={App}/>
         <Route exact path="/" component={App}/>
@@ -34,4 +36,5 @@ ReactDOM.render(
   </Router>,
   document.getElementById('root')
 );
+
 registerServiceWorker();
