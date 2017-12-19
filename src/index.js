@@ -14,6 +14,7 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
 import App from './App';
+import Charts from './Charts'
 import DonutChart from './DonutChart'
 import Bar from './Bar'
 import Popover from './Popover';
@@ -22,7 +23,8 @@ import Popover from './Popover';
 ReactDOM.render(
   <Router>
     <div>
-  <Popover />,
+      <Popover />
+      <Charts/>
       <Switch>
         <Route exact path="/" component={App}/>
         <Route path="/donut" component={DonutChart}/>
