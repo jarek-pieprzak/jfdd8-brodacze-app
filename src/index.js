@@ -11,23 +11,25 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 
 import './index.css';
 
-import List from './List'
-// import App from './App';
+import App from './App';
+import DonutChart from './DonutChart'
+import Bar from './Bar'
 
 import registerServiceWorker from './registerServiceWorker';
+
 
 ReactDOM.render(
   <Router>
     <div>
       <Switch>
-        <Route path="/list" component={List}/>
+        <Route exact path="/" component={App}/>
+        <Route path="/donut" component={DonutChart}/>
+        <Route path="/bar" component={Bar}/>
       </Switch>
 
-      <p>&copy; 2017 Bearded Team</p>
+      <p>&copy; 2017 BrodaczeGroup</p>
     </div>
   </Router>,
-
-
-  document.getElementById('root'));
-
+  document.getElementById('root')
+);
 registerServiceWorker();
