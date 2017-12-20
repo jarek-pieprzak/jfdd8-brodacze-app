@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 class Logpage extends Component {
 
@@ -14,6 +14,17 @@ class Logpage extends Component {
         <p className="Log-intro">
           Start saving your money with Us.
         </p>
+        <Form>
+          <FormGroup>
+            <Label for="exampleEmail">Email</Label>
+            <Input type="email" name="email" id="yourEmail" placeholder="with a placeholder"/>
+          </FormGroup>
+          <formGroup>
+            <Label for="examplePassword">Password</Label>
+            <Input type="password" name="password" id="yourPassword" placeholder="password placeholder"/>
+          </formGroup>
+          <Button>Log in !</Button>
+        </Form>
       </div>
     );
   }
