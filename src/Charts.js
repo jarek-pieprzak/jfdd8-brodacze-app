@@ -45,14 +45,14 @@ class Charts extends React.Component {
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
             <Row>
-              <Col sm="6" smOffset={6}>
+              <Col sm="6" >
                 <DonutChart/>
               </Col>
             </Row>
           </TabPane>
           <TabPane tabId="2">
             <Row>
-              <Col sm="6" smOffset={6}>
+              <Col sm="6" >
                 <Bar/>
               </Col>
             </Row>
