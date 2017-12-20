@@ -14,12 +14,31 @@ class List extends Component {
               'Flat',
               'Other fees and bills',
               'Cloths',
-              'Other expenses']
+              'Other expenses'],
+    selectedOption: null
   }
+
+  handleChange = event => {
+    this.setState({
+      taskInputValue: event.target.value
+    })
+  };
+
+  handleOption = event => {
+    this.setState({
+      selectedOption: event.target.value
+    })
+  };
+
+  handleOutcomeInputChange = () => {
+    this.setState({
+      outcomeChecked: !this.state.outcomeChecked
+    })
+  };
 
   handleSubmit = (event) => {
     event.preventDefault();
-      this.setState({
+    this.setState({
       tasks: this.state.tasks.concat({
         id: this.state.tasks.map(
           task => task.id
@@ -28,22 +47,11 @@ class List extends Component {
           0
         ) + 1,
         content: this.state.taskInputValue,
-        isOutcome: this.state.outcomeChecked
+        isOutcome: this.state.outcomeChecked,
+        selectedOption: this.state.selectedOption,
       }),
       taskInputValue: ''
     });
-  };
-
-  handleChange = event => {
-    this.setState({
-      taskInputValue: event.target.value
-    })
-  };
-
-  handleOutcomeInputChange = () => {
-    this.setState({
-      outcomeChecked: !this.state.outcomeChecked
-    })
   };
 
   render() {
@@ -68,13 +76,15 @@ class List extends Component {
               <input type="radio" name="digits"
                      onChange={this.handleOutcomeInputChange}
                      checked={this.state.outcomeChecked}
+
+
               /> - wydatki
             </label>
           </div>
         </form>
 
         <form action="Expenses" >Expenses
-          <select name="Outgoings" onChange={event => console.log(event.target.value)}>
+          <select name="Outgoings" onChange={this.handleOption}>
             {this.state.options.map(option => <option>{option}</option>)}
           </select>
         </form>
@@ -86,6 +96,7 @@ class List extends Component {
                 <li key={task.id}>
                   {task.content}
                   {task.isOutcome === true ? ' - ' : null}
+                  {task.selectedOption}
                   <button
                     data-task-id={task.id}
                     onClick={this.handleDeleteClick}>
