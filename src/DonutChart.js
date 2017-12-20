@@ -107,7 +107,6 @@ class DonutChart extends Component {
         category => category !== next.category
       ).concat(next.category), []);
 
-    console.log(categories)
 
     const categoriesData = categories.map(
       category => this.state.entries.filter(
