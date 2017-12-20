@@ -6,8 +6,16 @@ class List extends Component {
     taskInputValue: '',
     tasks: [],
     checkedTaskIds: [],
-    outcomeChecked: false
-    }
+    outcomeChecked: false,
+    options: ['Relax',
+              'Commute',
+              'Health, hygene and chemistry',
+              'Food',
+              'Flat',
+              'Other fees and bills',
+              'Cloths',
+              'Other expenses']
+  }
 
   handleSubmit = (event) => {
     event.preventDefault();
@@ -32,14 +40,14 @@ class List extends Component {
     })
   };
 
-  handleDeleteClick = event => {
-    console.log(event.target.dataset.taskId);
-    this.setState({
-      tasks: this.state.tasks.filter(
-        task => task.id !== parseInt(event.target.dataset.taskId, 10)
-      )
-    })
-  };
+  // handleDeleteClick = event => {
+  //   console.log(event.target.dataset.taskId);
+  //   this.setState({
+  //     tasks: this.state.tasks.filter(
+  //       task => task.id !== parseInt(event.target.dataset.taskId, 10)
+  //     )
+  //   })
+  // };
 
   handleOutcomeInputChange = () => {
     this.setState({
@@ -74,38 +82,9 @@ class List extends Component {
           </div>
         </form>
 
-        <form action="Expenses">Expenses
-          <select name="Wydatki">
-            <optgroup label="Flat">
-              <option>Podgrupa R</option>
-              <option>Podgrupa R</option>
-              <option>Podgrupa R</option>
-            </optgroup>
-            <optgroup label="Food">
-              <option>Podgrupa E</option>
-              <option>Podgrupa E</option>
-              <option>Podgrupa E</option>
-            </optgroup>
-            <optgroup label="Health, Hygiene and Chemistry">
-              <option>Podgrupa E</option>
-              <option>Podgrupa E</option>
-              <option>Podgrupa E</option>
-            </optgroup>
-            <optgroup label="Other Expencses">
-              <option>Podgrupa E</option>
-              <option>Podgrupa E</option>
-              <option>Podgrupa E</option>
-            </optgroup>
-            <optgroup label="Other fees and bils">
-              <option>Podgrupa E</option>
-              <option>Podgrupa E</option>
-              <option>Podgrupa E</option>
-            </optgroup>
-            <optgroup label="Relax">
-              <option>Podgrupa E</option>
-              <option>Podgrupa E</option>
-              <option>Podgrupa E</option>
-            </optgroup>
+        <form action="Expenses" >Expenses
+          <select name="Outgoings" onChange={event => console.log(event.target.value)}>
+            {this.state.options.map(option => <option>{option}</option>)}
           </select>
         </form>
 
@@ -115,15 +94,10 @@ class List extends Component {
               task => (
                 <li key={task.id}>
                   {task.content}
-
-                  {
-                    task.isOutcome === true ? ' - ' : null
-                  }
-
+                  {task.isOutcome === true ? ' - ' : null}
                   <button
                     data-task-id={task.id}
-                    onClick={this.handleDeleteClick}
-                  >
+                    onClick={this.handleDeleteClick}>
                     Usuń
                   </button>
                 </li>
@@ -135,5 +109,4 @@ class List extends Component {
     )
   }
 }
-
 export default List
