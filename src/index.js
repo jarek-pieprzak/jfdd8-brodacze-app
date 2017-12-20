@@ -11,12 +11,13 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 
 import './index.css';
 
+import registerServiceWorker from './registerServiceWorker';
+
 import App from './App';
+import Charts from './Charts'
 import DonutChart from './DonutChart'
 import Bar from './Bar'
-import List from './List'
-
-import registerServiceWorker from './registerServiceWorker';
+import Popover from './Popover';
 
 
 ReactDOM.render(
@@ -24,15 +25,17 @@ ReactDOM.render(
     <div>
       <Switch>
         <Route exact path="/" component={App}/>
-        <Route path="/List" component={List}/>
         <Route path="/donut" component={DonutChart}/>
         <Route path="/bar" component={Bar}/>
-
       </Switch>
+
+      <Popover />
+      <Charts/>
 
       <p>&copy; 2017 BrodaczeGroup</p>
     </div>
   </Router>,
   document.getElementById('root')
 );
+
 registerServiceWorker();
