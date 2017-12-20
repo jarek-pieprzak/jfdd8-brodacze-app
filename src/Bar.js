@@ -40,7 +40,7 @@ class BarChart extends Component {
                 id: 2,
                 title: 'Taxi',
                 category: 'Commute',
-                value: 100,
+                value: -100,
                 label: 'Expenses'
             },
             {
@@ -54,14 +54,14 @@ class BarChart extends Component {
                 id: 4,
                 title: 'Kupiłem burgiera',
                 category: 'Food',
-                value: 170,
+                value: -170,
                 label: 'Expenses'
             },
             {
                 id: 4,
                 title: 'Kupiłem burgiera',
                 category: 'Flat',
-                value: 170,
+                value: -170,
                 label: 'Expenses'
             },
 
@@ -91,9 +91,14 @@ class BarChart extends Component {
       labels: funds,
         datasets: [
             {
-                labels: fundsData,
+                label: funds,
                 backgroundColor: 'rgba(255,99,132,0.2)',
-            }
+                borderColor: 'rgba(255,99,132,1)',
+                borderWidth: 2,
+                hoverBackgroundColor: 'rgba(255,99,132,0.4)',
+                hoverBorderColor: 'rgba(255,99,132,1)',
+                data: fundsData
+            },
         ]
     };
 

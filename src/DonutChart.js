@@ -128,6 +128,8 @@ class DonutChart extends Component {
       'Other expenses': '#40BF35',
     }
 
+    console.log(categories)
+
     const data = {
       labels: categories,
       datasets: [{
