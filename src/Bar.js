@@ -20,7 +20,7 @@ const data = {
       borderWidth: 1,
       hoverBackgroundColor: 'rgba(255,99,132,0.4)',
       hoverBorderColor: 'rgba(255,99,132,1)',
-      data: [67, 43, 50, 41, 76, 95, 44]
+      data: [67, 43, 50, 41, 76, 95]
     }
   ]
 };
