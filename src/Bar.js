@@ -34,7 +34,7 @@ class BarChart extends Component {
                 title: 'Kupiłem fryty',
                 category: 'Relax',
                 value: 160,
-                label: 'Expenses'
+                label: 'Income'
             },
             {
                 id: 2,
@@ -48,7 +48,7 @@ class BarChart extends Component {
                 title: 'Hajs od bosa',
                 value: 100,
                 category: 'Health, hygiene and chemistry',
-                label: 'Expenses'
+                label: 'Income'
             },
             {
                 id: 4,
@@ -70,25 +70,34 @@ class BarChart extends Component {
 
 
   render() {
-
+// odnalezienie wszystkich income i expenses
     const funds = this.state.entries.reduce(
         (funds, next) => funds.filter(
         label => label !== next.label
         ).concat(next.label), []);
 
+    console.log(funds);
+
+      const fundsData = funds.map(
+          label => this.state.entries.filter(
+              entry => entry.label === label
+          ).reduce((total, next) => total + next.value, 0)
+      );
+
+      console.log(fundsData)
 
     const data = {
-      labels: ['ToDo'],
+      labels: [funds],
         datasets: [
             {
-                labels: funds
+                labels: fundsData,
             }
         ]
-    }
+    };
 
     return (
       <div style={{ height: '50vh' }}>
-        <h2>Bar Example (custom size)</h2>
+        <h2>Wykres slupkowy</h2>
         <Bar
           data={data}
           width={100}
