@@ -61,7 +61,7 @@ class BarChart extends Component {
                 id: 4,
                 title: 'Kupiłem burgiera',
                 category: 'Flat',
-                value: -170,
+                value: -270,
                 label: 'Expenses'
             },
 
