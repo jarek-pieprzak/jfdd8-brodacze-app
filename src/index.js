@@ -23,12 +23,12 @@ import Popover from './Popover';
 ReactDOM.render(
   <Router>
     <div>
-      <Popover />
+      {/*<Popover />*/}
       <Charts/>
       <Switch>
         <Route exact path="/" component={App}/>
-        <Route path="/donut" component={DonutChart}/>
-        <Route path="/bar" component={Bar}/>
+        {/*<Route path="/donut" component={DonutChart}/>*/}
+        {/*<Route path="/bar" component={Bar}/>*/}
       </Switch>
 
       <p>&copy; 2017 BrodaczeGroup</p>
