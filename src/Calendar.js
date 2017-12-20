@@ -25,6 +25,6 @@ class Calendar extends Component {
         </div>
     )
   }
-};
+}
 
 export default Calendar;

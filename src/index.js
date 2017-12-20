@@ -8,7 +8,7 @@ import {
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-
+import "react-big-calendar/lib/css/react-big-calendar.css"
 import './index.css';
 
 import registerServiceWorker from './registerServiceWorker';
@@ -18,6 +18,7 @@ import Charts from './Charts'
 import DonutChart from './DonutChart'
 import Bar from './Bar'
 import Popover from './Popover';
+import Calendar from './Calendar'
 
 
 ReactDOM.render(
@@ -27,6 +28,7 @@ ReactDOM.render(
         <Route exact path="/" component={App}/>
         <Route path="/donut" component={DonutChart}/>
         <Route path="/bar" component={Bar}/>
+        <Route path="/calendar" component={Calendar}/>
       </Switch>
 
       <Popover />
