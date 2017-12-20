@@ -20,7 +20,7 @@ class BarChart extends Component {
 
   render() {
     return (
-      <div style={{ height: '100vh' }}>
+      <div style={{ height: '50vh' }}>
         <h2>Bar Example (custom size)</h2>
         <Bar
           data={data}
