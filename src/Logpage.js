@@ -17,11 +17,11 @@ class Logpage extends Component {
         <Form>
           <FormGroup>
             <Label for="exampleEmail">Email</Label>
-            <Input type="email" name="email" id="yourEmail" placeholder="Fill in your e-mail address"/>
+            <Input type="email" name="email" id="yourEmail" required placeholder="Fill in your e-mail address"/>
           </FormGroup>
           <FormGroup>
             <Label for="examplePassword">Password</Label>
-            <Input type="password" name="password" id="yourPassword" placeholder="Fill in your password" required/>
+            <Input type="password" name="password" id="yourPassword" required placeholder="Fill in your password"/>
           </FormGroup>
           <Button>Log in !</Button>
         </Form>

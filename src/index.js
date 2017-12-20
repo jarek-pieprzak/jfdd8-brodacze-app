@@ -13,20 +13,19 @@ import './index.css';
 
 import registerServiceWorker from './registerServiceWorker';
 
-import App from './App';
+import Logpage from './Logpage';
 import Charts from './Charts';
 import DonutChart from './DonutChart';
 import Bar from './Bar';
 import Popover from './Popover';
-import Logpage from './Logpage';
+
 
 
 ReactDOM.render(
   <Router>
     <div>
       <Switch>
-        <Route exact path="/" component={App}/>
-        <Route path="logpage" component={Logpage}/>
+        <Route exact path="/logpage" component={Logpage}/>
         <Route path="/donut" component={DonutChart}/>
         <Route path="/bar" component={Bar}/>
       </Switch>
