@@ -32,7 +32,7 @@ ReactDOM.render(
       <Popover />
       <Charts/>
 
-      <p class="copright">&copy; 2017 BrodaczeGroup</p>
+      <p>&copy; 2017 BrodaczeGroup</p>
     </div>
   </Router>,
   document.getElementById('root')
