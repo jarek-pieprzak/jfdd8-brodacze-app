@@ -4,8 +4,9 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "popper.js": "^1.12.9",
     "chart.js": "^2.7.1",
+    "moment": "^2.20.1",
+    "popper.js": "^1.12.9",
     "react": "^16.2.0",
     "react-bootstrap": "^0.31.5",
     "react-chartjs-2": "^2.6.4",
