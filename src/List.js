@@ -40,15 +40,6 @@ class List extends Component {
     })
   };
 
-  // handleDeleteClick = event => {
-  //   console.log(event.target.dataset.taskId);
-  //   this.setState({
-  //     tasks: this.state.tasks.filter(
-  //       task => task.id !== parseInt(event.target.dataset.taskId, 10)
-  //     )
-  //   })
-  // };
-
   handleOutcomeInputChange = () => {
     this.setState({
       outcomeChecked: !this.state.outcomeChecked

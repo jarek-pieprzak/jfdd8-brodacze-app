@@ -18,6 +18,7 @@ import Charts from './Charts'
 import DonutChart from './DonutChart'
 import Bar from './Bar'
 import Popover from './Popover';
+import List from './List';
 
 
 ReactDOM.render(
@@ -27,6 +28,7 @@ ReactDOM.render(
         <Route exact path="/" component={App}/>
         <Route path="/donut" component={DonutChart}/>
         <Route path="/bar" component={Bar}/>
+        <Route path="/list" component={List}/>
       </Switch>
 
       <Popover />
