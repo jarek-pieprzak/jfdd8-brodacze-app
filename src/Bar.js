@@ -70,7 +70,7 @@ class BarChart extends Component {
 
 
   render() {
-// odnalezienie wszystkich income i expenses
+// odnalezienie wszystkich income i expenses dla całej tablicy
     const funds = this.state.entries.reduce(
         (funds, next) => funds.filter(
         label => label !== next.label
@@ -78,6 +78,7 @@ class BarChart extends Component {
 
     console.log(funds);
 
+// sumowanie wartości incomes i expenses dla całej tablicy
       const fundsData = funds.map(
           label => this.state.entries.filter(
               entry => entry.label === label
@@ -87,10 +88,11 @@ class BarChart extends Component {
       console.log(fundsData)
 
     const data = {
-      labels: [funds],
+      labels: funds,
         datasets: [
             {
                 labels: fundsData,
+                backgroundColor: 'rgba(255,99,132,0.2)',
             }
         ]
     };
