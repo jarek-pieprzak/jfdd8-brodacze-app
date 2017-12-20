@@ -30,56 +30,56 @@ class DonutChart extends Component {
         title: 'Kupiłem fryty',
         category: 'Relax',
         value: 160,
-        isIncome: false
+          label: 'Expenses'
       },
       {
         id: 2,
         title: 'Taxi',
         category: 'Commute',
         value: 100,
-        isIncome: false
+          label: 'Expenses'
       },
       {
         id: 3,
         title: 'Hajs od bosa',
         value: 100,
         category: 'Health, hygiene and chemistry',
-        isIncome: true
+          label: 'Expenses'
       },
       {
         id: 4,
         title: 'Kupiłem burgiera',
         category: 'Food',
         value: 170,
-        isIncome: false
+          label: 'Expenses'
       },
       {
         id: 4,
         title: 'Kupiłem burgiera',
         category: 'Flat',
         value: 170,
-        isIncome: false
+          label: 'Expenses'
       },
       {
         id: 4,
         title: 'Kupiłem burgiera',
         category: 'Other fees and bills',
         value: 170,
-        isIncome: false
+          label: 'Expenses'
       },
       {
         id: 4,
         title: 'Kupiłem burgiera',
         category: 'Cloth',
         value: 170,
-        isIncome: false
+          label: 'Expenses'
       },
       {
         id: 4,
         title: 'Kupiłem burgiera',
         category: 'Other expenses',
         value: 170,
-        isIncome: false
+          label: 'Expenses'
       },
     ]
   }
