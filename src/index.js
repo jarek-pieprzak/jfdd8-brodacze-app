@@ -6,26 +6,35 @@ import {
   Route
 } from 'react-router-dom';
 
-import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-import 'react-big-calendar/lib/css/react-big-calendar.css'
+
 import './index.css';
-import App from './App';
-import Calendar from './Calendar';
+
 import registerServiceWorker from './registerServiceWorker';
+
+import App from './App';
+import Charts from './Charts'
+import DonutChart from './DonutChart'
+import Bar from './Bar'
+import Popover from './Popover';
 
 
 ReactDOM.render(
   <Router>
     <div>
+      <Popover />
+      <Charts/>
       <Switch>
         <Route exact path="/" component={App}/>
-        <Route path="/calendar" component={Calendar}/>
+        <Route path="/donut" component={DonutChart}/>
+        <Route path="/bar" component={Bar}/>
       </Switch>
-      <p>&copy; 2017 Brodacze-Group</p>
+
+      <p>&copy; 2017 BrodaczeGroup</p>
     </div>
   </Router>,
   document.getElementById('root')
 );
+
 registerServiceWorker();
