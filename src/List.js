@@ -16,7 +16,7 @@ class List extends Component {
               'Other fees and bills',
               'Cloths',
               ],
-    selectedOption: 'Other expenses'
+    category: 'Other expenses'
   }
 
   handleChange = event => {
@@ -25,17 +25,23 @@ class List extends Component {
     })
   };
 
-  handleOption = event => {
-    this.setState({
-      selectedOption: event.target.value
-    })
-  };
-
   handleOutcomeInputChange = () => {
     this.setState({
       outcomeChecked: !this.state.outcomeChecked
     })
   };
+
+  handleOption = event => {
+    this.setState({
+      category: event.target.value
+    })
+  };
+
+  // handleIncomeCheckboxChange = () => {
+  //   this.setState({
+  //     incomeChecked: this.state.incomeChecked
+  //   })
+  // }
 
   handleDeleteClick = event => {
     console.log(event.target.dataset.taskId);
@@ -58,9 +64,8 @@ class List extends Component {
         ) + 1,
         content: this.state.taskInputValue,
         isOutcome: this.state.outcomeChecked,
-        selectedOption: this.state.selectedOption,
-        date: new Date()
-
+        category: this.state.outcomeChecked ? this.state.category : null,
+        date: ''+ (new Date())
       }),
       taskInputValue: ''
     });
@@ -81,7 +86,7 @@ class List extends Component {
             <label>
               <input type="radio" name="digits"
                      onChange={this.handleIncomeCheckboxChange}
-                     checked={this.state.incomeChecked}
+                     // checked={this.state.incomeChecked}
               /> + wpływy;
             </label>
             <label>
@@ -107,8 +112,9 @@ class List extends Component {
               task => (
                 <li key={task.id}>
                   {task.content}
-                  {task.isOutcome === true ? ' - ' : null}
-                  {task.selectedOption}
+                  {task.isOutcome === true ? null : ' Earnings '}
+                  {task.category}
+                  {task.date}
                   <button
                     data-task-id={task.id}
                     onClick={this.handleDeleteClick}>
