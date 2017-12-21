@@ -7,7 +7,8 @@ class List extends Component {
     tasks: [],
     checkedTaskIds: [],
     outcomeChecked: false,
-    options: ['Other expenses',
+    options: ['- Choose from the list -',
+              'Other expenses',
               'Relax',
               'Commute',
               'Health, hygene and chemistry',
@@ -16,7 +17,7 @@ class List extends Component {
               'Other fees and bills',
               'Cloths',
               ],
-    category: 'Other expenses'
+    category: '- choose from list -'
   }
 
   handleChange = event => {
@@ -36,12 +37,6 @@ class List extends Component {
       category: event.target.value
     })
   };
-
-  // handleIncomeCheckboxChange = () => {
-  //   this.setState({
-  //     incomeChecked: this.state.incomeChecked
-  //   })
-  // }
 
   handleDeleteClick = event => {
     console.log(event.target.dataset.taskId);
@@ -74,20 +69,20 @@ class List extends Component {
   render() {
     return (
       <div>
-        <p>Wprowadź wpływy i wydatki</p>
+        <p>Add your earnings and outgoings</p>
 
         <form onSubmit={this.handleSubmit}>
           <input
             value={this.state.taskInputValue}
             onChange={this.handleChange}
           />
-          <button>WPROWADŹ</button>
+          <button>Submit</button>
           <div>
             <label>
               <input type="radio" name="digits"
                      onChange={this.handleIncomeCheckboxChange}
-                     // checked={this.state.incomeChecked}
-              /> + wpływy;
+
+              /> + earnings:
             </label>
             <label>
               <input type="radio" name="digits"
@@ -95,12 +90,12 @@ class List extends Component {
                      checked={this.state.outcomeChecked}
 
 
-              /> - wydatki
+              /> - outgoings:
             </label>
           </div>
         </form>
 
-        <form action="Expenses" >Expenses
+        <form action="Expenses" >Outgoings:
           <select name="Outgoings" onChange={this.handleOption}>
             {this.state.options.map(option => <option>{option}</option>)}
           </select>
@@ -111,8 +106,8 @@ class List extends Component {
             this.state.tasks.map(
               task => (
                 <li key={task.id}>
+                  {task.isOutcome === true ? '- ' : ' Earnings - '}
                   {task.content}
-                  {task.isOutcome === true ? null : ' Earnings '}
                   {task.category}
                   {task.date}
                   <button
