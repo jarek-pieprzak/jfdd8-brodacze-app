@@ -7,15 +7,16 @@ class List extends Component {
     tasks: [],
     checkedTaskIds: [],
     outcomeChecked: false,
-    options: ['Relax',
+    options: ['Other expenses',
+              'Relax',
               'Commute',
               'Health, hygene and chemistry',
               'Food',
               'Flat',
               'Other fees and bills',
               'Cloths',
-              'Other expenses'],
-    selectedOption: null
+              ],
+    selectedOption: 'Other expenses'
   }
 
   handleChange = event => {
@@ -36,6 +37,15 @@ class List extends Component {
     })
   };
 
+  handleDeleteClick = event => {
+    console.log(event.target.dataset.taskId);
+    this.setState({
+      tasks: this.state.tasks.filter(
+        task => task.id !== parseInt(event.target.dataset.taskId, 10)
+      )
+    })
+  };
+
   handleSubmit = (event) => {
     event.preventDefault();
     this.setState({
@@ -49,6 +59,8 @@ class List extends Component {
         content: this.state.taskInputValue,
         isOutcome: this.state.outcomeChecked,
         selectedOption: this.state.selectedOption,
+        date: new Date()
+
       }),
       taskInputValue: ''
     });
