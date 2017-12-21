@@ -34,6 +34,7 @@ class BarChart extends Component {
                 title: 'Kupiłem fryty',
                 category: 'Relax',
                 value: 160,
+                start: new Date(2017, 11, 1),
                 label: 'Income'
             },
             {
@@ -41,6 +42,7 @@ class BarChart extends Component {
                 title: 'Taxi',
                 category: 'Commute',
                 value: -100,
+                start: new Date(2017, 11, 1),
                 label: 'Expenses'
             },
             {
@@ -48,6 +50,7 @@ class BarChart extends Component {
                 title: 'Hajs od bosa',
                 value: 100,
                 category: 'Health, hygiene and chemistry',
+                start: new Date(2017, 11, 1),
                 label: 'Income'
             },
             {
@@ -55,6 +58,7 @@ class BarChart extends Component {
                 title: 'Kupiłem burgiera',
                 category: 'Food',
                 value: -170,
+                start: new Date(2017, 11, 1),
                 label: 'Expenses'
             },
             {
@@ -62,6 +66,7 @@ class BarChart extends Component {
                 title: 'Kupiłem burgiera',
                 category: 'Flat',
                 value: -270,
+                start: new Date(2017, 11, 1),
                 label: 'Expenses'
             },
 
@@ -114,7 +119,7 @@ class BarChart extends Component {
                 hoverBackgroundColor: 'rgba(255,99,132,0.4)',
                 hoverBorderColor: 'rgba(255,99,132,1)',
                 data: [incomesTotal, 20, 100, 200]
-            },
+            }
           {
             label: 'Expenses',
             backgroundColor: 'rgba(255,99,132,0.2)',
