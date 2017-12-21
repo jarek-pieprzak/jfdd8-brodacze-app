@@ -82,7 +82,7 @@ class DonutChart extends Component {
           label: 'Expenses'
       },
     ]
-  }
+  };
 
   render() {
 
