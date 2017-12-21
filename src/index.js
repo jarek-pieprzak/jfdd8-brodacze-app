@@ -24,16 +24,17 @@ import Popover from './Popover';
 ReactDOM.render(
   <Router>
     <div>
+      <Popover />
+      <Charts/>
       <Switch>
         <Route exact path="/logpage" component={Logpage}/>
         <Route path="/donut" component={DonutChart}/>
         <Route path="/bar" component={Bar}/>
       </Switch>
 
-      <Popover />
-      <Charts/>
 
-      <p>&copy; 2017 BrodaczeGroup</p>
+
+      <p style={{ paddingTop: 50 }}>&copy; 2017 BrodaczeGroup</p>
     </div>
   </Router>,
   document.getElementById('root')

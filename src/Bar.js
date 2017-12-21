@@ -33,36 +33,31 @@ class BarChart extends Component {
                 id: 1,
                 title: 'Kupiłem fryty',
                 category: 'Relax',
-                value: 160,
-                label: 'Income'
+                value: 2400,
             },
             {
                 id: 2,
                 title: 'Taxi',
                 category: 'Commute',
-                value: -100,
-                label: 'Expenses'
+                value: -1000,
             },
             {
                 id: 3,
                 title: 'Hajs od bosa',
                 value: 100,
                 category: 'Health, hygiene and chemistry',
-                label: 'Income'
             },
             {
                 id: 4,
                 title: 'Kupiłem burgiera',
                 category: 'Food',
-                value: -170,
-                label: 'Expenses'
+                value: -520,
             },
             {
                 id: 4,
                 title: 'Kupiłem burgiera',
                 category: 'Flat',
                 value: -270,
-                label: 'Expenses'
             },
 
         ]
@@ -80,40 +75,31 @@ class BarChart extends Component {
 
     const expenses = this.state.entries.filter(
       entry => entry.value < 0
-    )
+    );
 
     const expensesTotal = expenses.reduce(
       (total, next) => total + next.value, 0
-    )
+    );
 
     const incomes = this.state.entries.filter(
       entry => entry.value > 0
-    )
+    );
 
     const incomesTotal = incomes.reduce(
       (total, next) => total + next.value, 0
-    )
-
-// sumowanie wartości incomes i expenses dla całej tablicy
-      const fundsData = funds.map(
-          label => this.state.entries.filter(
-              entry => entry.label === label
-          ).reduce((total, next) => total + next.value, 0)
-      );
-
-      console.log(fundsData)
+    );
 
     const data = {
-      labels: ['Monday', 'Tuesday', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      labels: [],
         datasets: [
             {
                 label: 'Incomes',
-                backgroundColor: 'rgba(255,99,132,0.2)',
-                borderColor: 'rgba(255,99,132,1)',
+                backgroundColor: '#40BF35',
+                borderColor: '#103D10',
                 borderWidth: 2,
                 hoverBackgroundColor: 'rgba(255,99,132,0.4)',
                 hoverBorderColor: 'rgba(255,99,132,1)',
-                data: [incomesTotal, 20, 100, 200]
+                data: [incomesTotal]
             },
           {
             label: 'Expenses',
@@ -122,7 +108,7 @@ class BarChart extends Component {
             borderWidth: 2,
             hoverBackgroundColor: 'rgba(255,199,132,0.4)',
             hoverBorderColor: 'rgba(255,99,132,1)',
-            data: [-expensesTotal, 10, 55, 100]
+            data: [-expensesTotal]
           },
         ]
     };
@@ -135,7 +121,14 @@ class BarChart extends Component {
           width={100}
           height={50}
           options={{
-            maintainAspectRatio: false
+            maintainAspectRatio: false,
+            scales: {
+              yAxes: [{
+                ticks: {
+                  beginAtZero:true
+                }
+              }]
+            }
           }}
         />
       </div>
