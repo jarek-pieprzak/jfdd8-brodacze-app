@@ -39,8 +39,8 @@ ReactDOM.render(
         <Route path="/bar" component={Bar}/>
       </Switch>
 
-      <Popover />
-      <Charts/>
+      {/*<Popover />*/}
+      {/*<Charts/>*/}
 
       <p>&copy; 2017 BrodaczeGroup</p>
     </div>

@@ -3,6 +3,7 @@ import firebase from 'firebase'
 import SignUp from './SignUp'
 import SignIn from './SignIn'
 
+import './LogPage.css'
 
 class LogPage extends Component {
 
@@ -23,7 +24,8 @@ class LogPage extends Component {
   render() {
     return (
       <div>
-        <h1>ToDo Firebase</h1>
+        <div><img src="pocketbook-min-org.png" alt="logo"/></div>
+        <h1>Pocketbook</h1>
         {
           this.state.user === null ?
             <div>

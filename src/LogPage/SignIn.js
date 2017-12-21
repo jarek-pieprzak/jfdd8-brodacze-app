@@ -30,19 +30,22 @@ class SignIn extends Component {
         <form
           onSubmit={this.handleSubmit}
         >
-          E-mail
+          <div>
+            E-mail
           <input
             onChange={this.handleChange}
             name="email"
           />
+          </div>
 
-          Password
+          <div>
+            Password
           <input
             onChange={this.handleChange}
             name="password"
             type="password"
           />
-
+          </div>
           <button>SIGN IN</button>
         </form>
       </div>
