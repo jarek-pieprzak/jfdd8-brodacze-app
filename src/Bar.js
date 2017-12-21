@@ -78,6 +78,22 @@ class BarChart extends Component {
 
     console.log(funds);
 
+    const expenses = this.state.entries.filter(
+      entry => entry.value < 0
+    )
+
+    const expensesTotal = expenses.reduce(
+      (total, next) => total + next.value, 0
+    )
+
+    const incomes = this.state.entries.filter(
+      entry => entry.value > 0
+    )
+
+    const incomesTotal = incomes.reduce(
+      (total, next) => total + next.value, 0
+    )
+
 // sumowanie wartości incomes i expenses dla całej tablicy
       const fundsData = funds.map(
           label => this.state.entries.filter(
@@ -88,17 +104,26 @@ class BarChart extends Component {
       console.log(fundsData)
 
     const data = {
-      labels: funds,
+      labels: ['Monday', 'Tuesday', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
         datasets: [
             {
-                label: funds,
+                label: 'Incomes',
                 backgroundColor: 'rgba(255,99,132,0.2)',
                 borderColor: 'rgba(255,99,132,1)',
                 borderWidth: 2,
                 hoverBackgroundColor: 'rgba(255,99,132,0.4)',
                 hoverBorderColor: 'rgba(255,99,132,1)',
-                data: fundsData
+                data: [incomesTotal, 20, 100, 200]
             },
+          {
+            label: 'Expenses',
+            backgroundColor: 'rgba(255,99,132,0.2)',
+            borderColor: 'rgba(255,99,132,1)',
+            borderWidth: 2,
+            hoverBackgroundColor: 'rgba(255,199,132,0.4)',
+            hoverBorderColor: 'rgba(255,99,132,1)',
+            data: [-expensesTotal, 10, 55, 100]
+          },
         ]
     };
 
