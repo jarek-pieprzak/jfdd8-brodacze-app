@@ -7,6 +7,7 @@ class List extends Component {
     tasks: [],
     checkedTaskIds: [],
     outcomeChecked: false,
+    incomeChecked: true,
     options: ['- Choose from the list -',
               'Other expenses',
               'Relax',
@@ -26,8 +27,16 @@ class List extends Component {
     })
   };
 
+  handleIncomeInputChange = () => {
+    this.setState({
+      incomeChecked: !this.state.incomeChecked,
+      outcomeChecked: this.state.incomeChecked
+    })
+  };
+
   handleOutcomeInputChange = () => {
     this.setState({
+      incomeChecked: this.state.outcomeChecked,
       outcomeChecked: !this.state.outcomeChecked
     })
   };
@@ -58,6 +67,7 @@ class List extends Component {
           0
         ) + 1,
         content: this.state.taskInputValue,
+        isIncome: this.state.incomeChecked,
         isOutcome: this.state.outcomeChecked,
         category: this.state.outcomeChecked ? this.state.category : null,
         date: ''+ (new Date())
@@ -80,7 +90,8 @@ class List extends Component {
           <div>
             <label>
               <input type="radio" name="digits"
-                     onChange={this.handleIncomeCheckboxChange}
+                     onChange={this.handleIncomeInputChange}
+                     checked={this.state.incomeChecked}
 
               /> + earnings:
             </label>
@@ -106,8 +117,9 @@ class List extends Component {
             this.state.tasks.map(
               task => (
                 <li key={task.id}>
-                  {task.isOutcome === true ? '- ' : ' Earnings - '}
+                  {task.isOutcome === true && ' - '}
                   {task.content}
+                  {task.isIncome === true && 'Earnings'}
                   {task.category}
                   {task.date}
                   <button
