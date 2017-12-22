@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import firebase from 'firebase'
-import SignUp from './SignUp'
-import SignIn from './SignIn'
+import SignUp from '../Auth/SignUp'
+import SignIn from '../Auth/SignIn'
 
 import './LogPage.css'
 
