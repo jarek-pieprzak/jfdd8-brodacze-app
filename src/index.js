@@ -14,7 +14,6 @@ import './index.css';
 import setupFirebase from './setupFirebase'
 
 import Auth from './Auth'
-import LogPage from './LogPage/LogPage';
 import Charts from './Charts';
 import Popover from './Popover';
 import registerServiceWorker from './registerServiceWorker';
@@ -24,15 +23,10 @@ setupFirebase();
 ReactDOM.render(
   <Router>
     <div>
-
-      <Switch>
-        <Popover/>
-        <Charts/>
         <Auth>
-          <Route exact path="/logpage" component={LogPage}/>
-        </Auth>
-      </Switch>
-
+          <Popover/>
+          <Charts/>
+      </Auth>
       <p style={{ paddingTop: 50 }}>&copy; 2017 BrodaczeGroup</p>
     </div>
   </Router>,
