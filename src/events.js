@@ -13,7 +13,7 @@
   },
 
   {
-    'title': 'DTS STARTS',
+    'title': '120 pln chemia',
     'start': new Date(2017, 11, 17,),
     'end': new Date(2017, 11, 17,)
   }

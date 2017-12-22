@@ -6,9 +6,9 @@ import {
   Route
 } from 'react-router-dom';
 
+import "react-big-calendar/lib/css/react-big-calendar.css"
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-import "react-big-calendar/lib/css/react-big-calendar.css"
 import './index.css';
 
 import registerServiceWorker from './registerServiceWorker';
