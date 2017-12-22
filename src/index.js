@@ -11,30 +11,26 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 
 import './index.css';
 
-import registerServiceWorker from './registerServiceWorker';
+import setupFirebase from './setupFirebase'
 
-import App from './App';
-import Charts from './Charts'
-import DonutChart from './DonutChart'
-import Bar from './Bar'
+import Auth from './Auth'
+import Charts from './Charts';
 import Popover from './Popover';
 import List from './List';
+import registerServiceWorker from './registerServiceWorker';
 
+setupFirebase();
 
 ReactDOM.render(
   <Router>
     <div>
-      <Switch>
-        <Route exact path="/" component={App}/>
-        <Route path="/donut" component={DonutChart}/>
-        <Route path="/bar" component={Bar}/>
-        <Route path="/list" component={List}/>
-      </Switch>
+      <Auth>
+        <List/>
+        <Popover/>
+        <Charts/>
+      </Auth>
 
-      <Popover />
-      <Charts/>
-
-      <p>&copy; 2017 BrodaczeGroup</p>
+      <p style={{ paddingTop: 50 }}>&copy; 2017 BrodaczeGroup</p>
     </div>
   </Router>,
   document.getElementById('root')
