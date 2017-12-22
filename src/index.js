@@ -23,10 +23,12 @@ setupFirebase();
 ReactDOM.render(
   <Router>
     <div>
-        <Auth>
+
+       <Auth>
           <Popover/>
           <Charts/>
       </Auth>
+    
       <p style={{ paddingTop: 50 }}>&copy; 2017 BrodaczeGroup</p>
     </div>
   </Router>,
