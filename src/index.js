@@ -16,6 +16,7 @@ import setupFirebase from './setupFirebase'
 import Auth from './Auth'
 import Charts from './Charts';
 import Popover from './Popover';
+import List from './List';
 import registerServiceWorker from './registerServiceWorker';
 
 setupFirebase();
@@ -23,12 +24,12 @@ setupFirebase();
 ReactDOM.render(
   <Router>
     <div>
-
-       <Auth>
-          <Popover/>
-          <Charts/>
+      <Auth>
+        <List/>
+        <Popover/>
+        <Charts/>
       </Auth>
-    
+
       <p style={{ paddingTop: 50 }}>&copy; 2017 BrodaczeGroup</p>
     </div>
   </Router>,
