@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import moment from 'moment'
 
 class List extends Component {
 
@@ -66,11 +67,11 @@ class List extends Component {
           (biggest, next) => Math.max(biggest, next),
           0
         ) + 1,
-        content: this.state.taskInputValue,
+        content: ''+this.state.taskInputValue+'',
         isIncome: this.state.incomeChecked,
         isOutcome: this.state.outcomeChecked,
-        category: this.state.outcomeChecked ? this.state.category : null,
-        date: ''+ (new Date())
+        category: this.state.outcomeChecked ? ''+this.state.category : null,
+        date: ''+(new Date())
       }),
       taskInputValue: ''
     });
@@ -119,9 +120,11 @@ class List extends Component {
                 <li key={task.id}>
                   {task.isOutcome === true && ' - '}
                   {task.content}
-                  {task.isIncome === true && 'Earnings'}
+                  {task.isIncome === true && ' Earnings '}
+                  {' '}
                   {task.category}
-                  {task.date}
+                  {' '}
+                  {moment(task.date).format('dddd, MMMM Do YYYY')}
                   <button
                     data-task-id={task.id}
                     onClick={this.handleDeleteClick}>
