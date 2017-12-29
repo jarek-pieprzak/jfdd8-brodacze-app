@@ -14,7 +14,7 @@ import './index.css';
 import setupFirebase from './setupFirebase'
 
 import Auth from './Auth'
-import Charts from './Charts';
+import Charts from './Charts/Charts';
 import Popover from './Popover';
 import List from './List';
 import registerServiceWorker from './registerServiceWorker';
