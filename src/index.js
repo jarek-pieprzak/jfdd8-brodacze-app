@@ -15,7 +15,6 @@ import setupFirebase from './setupFirebase'
 
 import Auth from './Auth'
 import Charts from './Charts';
-import Popover from './Popover';
 import Calendar from './Calendar'
 import List from './List';
 import registerServiceWorker from './registerServiceWorker';
@@ -27,7 +26,6 @@ ReactDOM.render(
     <div>
       <Auth>
         <List/>
-        <Popover/>
         <Charts/>
       </Auth>
 
