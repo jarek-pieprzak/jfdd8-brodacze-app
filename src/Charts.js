@@ -3,6 +3,7 @@ import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Ca
 import classnames from 'classnames';
 import DonutChart from './DonutChart'
 import Bar from './Bar'
+import Calendar from './Calendar'
 
 class Charts extends React.Component {
   constructor(props) {
@@ -57,6 +58,7 @@ class Charts extends React.Component {
               </Col>
             </Row>
           </TabPane>
+          {/*<Calendar/>*/}
         </TabContent>
       </div>
     );
