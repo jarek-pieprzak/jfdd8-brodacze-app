@@ -26,62 +26,62 @@ import firebase from 'firebase'
 class DonutChart extends Component {
   state = {
     entries: [
-      {
-        id: 1,
-        title: 'Kupiłem fryty',
-        category: 'Relax',
-        value: 400,
-          label: 'Expenses'
-      },
-      {
-        id: 2,
-        title: 'Taxi',
-        category: 'Commute',
-        value: 100,
-          label: 'Expenses'
-      },
-      {
-        id: 3,
-        title: 'Hajs od bosa',
-        value: 100,
-        category: 'Health, hygiene and chemistry',
-          label: 'Expenses'
-      },
-      {
-        id: 4,
-        title: 'Kupiłem burgiera',
-        category: 'Food',
-        value: 170,
-          label: 'Expenses'
-      },
-      {
-        id: 4,
-        title: 'Kupiłem burgiera',
-        category: 'Flat',
-        value: 170,
-          label: 'Expenses'
-      },
-      {
-        id: 4,
-        title: 'Kupiłem burgiera',
-        category: 'Other fees and bills',
-        value: 170,
-          label: 'Expenses'
-      },
-      {
-        id: 4,
-        title: 'Kupiłem burgiera',
-        category: 'Cloth',
-        value: 170,
-          label: 'Expenses'
-      },
-      {
-        id: 4,
-        title: 'Kupiłem burgiera',
-        category: 'Other expenses',
-        value: 170,
-          label: 'Expenses'
-      },
+      // {
+      //   id: 1,
+      //   title: 'Kupiłem fryty',
+      //   category: 'Relax',
+      //   value: 400,
+      //     label: 'Expenses'
+      // },
+      // {
+      //   id: 2,
+      //   title: 'Taxi',
+      //   category: 'Commute',
+      //   value: 100,
+      //     label: 'Expenses'
+      // },
+      // {
+      //   id: 3,
+      //   title: 'Hajs od bosa',
+      //   value: 100,
+      //   category: 'Health, hygiene and chemistry',
+      //     label: 'Expenses'
+      // },
+      // {
+      //   id: 4,
+      //   title: 'Kupiłem burgiera',
+      //   category: 'Food',
+      //   value: 170,
+      //     label: 'Expenses'
+      // },
+      // {
+      //   id: 4,
+      //   title: 'Kupiłem burgiera',
+      //   category: 'Flat',
+      //   value: 170,
+      //     label: 'Expenses'
+      // },
+      // {
+      //   id: 4,
+      //   title: 'Kupiłem burgiera',
+      //   category: 'Other fees and bills',
+      //   value: 170,
+      //     label: 'Expenses'
+      // },
+      // {
+      //   id: 4,
+      //   title: 'Kupiłem burgiera',
+      //   category: 'Cloth',
+      //   value: 170,
+      //     label: 'Expenses'
+      // },
+      // {
+      //   id: 4,
+      //   title: 'Kupiłem burgiera',
+      //   category: 'Other expenses',
+      //   value: 170,
+      //     label: 'Expenses'
+      // },
     ]
   };
 
