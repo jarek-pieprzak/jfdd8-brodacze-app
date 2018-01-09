@@ -120,7 +120,7 @@ class Bar7days extends Component {
           hoverBackgroundColor: 'rgba(255,99,132,0.4)',
           hoverBorderColor: 'rgba(255,99,132,1)',
           data: [incomesTotal, 20, 100, 200]
-        }
+        },
         {
           label: 'Expenses',
           backgroundColor: 'rgba(255,99,132,0.2)',

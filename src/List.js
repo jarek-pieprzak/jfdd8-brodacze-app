@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import moment from 'moment'
+import firebase from 'firebase'
 
 class List extends Component {
 
@@ -10,16 +11,29 @@ class List extends Component {
     outcomeChecked: false,
     incomeChecked: true,
     options: ['- Choose from the list -',
-              'Other expenses',
-              'Relax',
-              'Commute',
-              'Health, hygene and chemistry',
-              'Food',
-              'Flat',
-              'Other fees and bills',
-              'Cloths',
-              ],
+      'Other expenses',
+      'Relax',
+      'Commute',
+      'Health, hygene and chemistry',
+      'Food',
+      'Flat',
+      'Other fees and bills',
+      'Cloths',
+    ],
     category: '- choose from list -'
+  }
+
+  componentDidMount() {
+    const userUid = firebase.auth().currentUser.uid
+    firebase.database().ref('/tasks/' + userUid).on('value', snapshot => this.setState({
+        tasks: Object.entries(snapshot.val() || {}).map(
+          ([key, value]) => ({
+            id: key,
+            ...value
+          })
+        )
+      })
+    )
   }
 
   handleChange = event => {
@@ -49,30 +63,34 @@ class List extends Component {
   };
 
   handleDeleteClick = event => {
-    console.log(event.target.dataset.taskId);
-    this.setState({
-      tasks: this.state.tasks.filter(
-        task => task.id !== parseInt(event.target.dataset.taskId, 10)
-      )
-    })
+    const taskId = event.target.dataset.taskId;
+    const userUid = firebase.auth().currentUser.uid
+    firebase.database().ref('/tasks/' + userUid + '/' + taskId).set(null)
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
+
+    const userUid = firebase.auth().currentUser.uid
+    firebase.database().ref('/tasks/' + userUid).push({
+      content: '' + this.state.taskInputValue + '',
+      isIncome: this.state.incomeChecked,
+      isOutcome: this.state.outcomeChecked,
+      category: this.state.outcomeChecked ? '' + this.state.category : null,
+      date: '' + (new Date())
+    })
+
+    // tasks: this.state.tasks.concat({
+    //   id: this.state.tasks.map(
+    //     task => task.id
+    //   ).reduce(
+    //     (biggest, next) => Math.max(biggest, next),
+    //     0
+    //   ) + 1,
+
+    // }),
+
     this.setState({
-      tasks: this.state.tasks.concat({
-        id: this.state.tasks.map(
-          task => task.id
-        ).reduce(
-          (biggest, next) => Math.max(biggest, next),
-          0
-        ) + 1,
-        content: ''+this.state.taskInputValue+'',
-        isIncome: this.state.incomeChecked,
-        isOutcome: this.state.outcomeChecked,
-        category: this.state.outcomeChecked ? ''+this.state.category : null,
-        date: ''+(new Date())
-      }),
       taskInputValue: ''
     });
   };
@@ -107,7 +125,7 @@ class List extends Component {
           </div>
         </form>
 
-        <form action="Expenses" >Outgoings:
+        <form action="Expenses">Outgoings:
           <select name="Outgoings" onChange={this.handleOption}>
             {this.state.options.map(option => <option>{option}</option>)}
           </select>
@@ -139,4 +157,5 @@ class List extends Component {
     )
   }
 }
+
 export default List

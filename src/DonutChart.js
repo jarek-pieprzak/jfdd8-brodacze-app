@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Doughnut} from 'react-chartjs-2';
+import firebase from 'firebase'
 
 // const data = {
 //   labels: [
@@ -29,7 +30,7 @@ class DonutChart extends Component {
         id: 1,
         title: 'Kupiłem fryty',
         category: 'Relax',
-        value: 160,
+        value: 400,
           label: 'Expenses'
       },
       {
@@ -84,6 +85,26 @@ class DonutChart extends Component {
     ]
   };
 
+  componentDidMount() {
+    const userUid = firebase.auth().currentUser.uid
+    firebase.database().ref('/tasks/' + userUid).on('value', snapshot => this.setState({
+        entries: Object.entries(snapshot.val() || {}).map(
+          ([key, value]) => ({
+            id: key,
+            ...value
+          })
+        ).map(
+          item => ({
+            ...item,
+            // value: (item.isIncome ? 1 : -1) * parseInt(item.content)
+            category: item.isIncome ? 'Income' : item.category,
+            value: parseFloat(item.content)
+          })
+        )
+      })
+    )
+  }
+
   render() {
 
     // const data = this.state.entries.reduce(
@@ -126,6 +147,7 @@ class DonutChart extends Component {
       'Other fees and bills': '#5300A4',
       'Cloth': '#0089D0',
       'Other expenses': '#40BF35',
+      'Income': 'red'
     }
 
     console.log(categories)
