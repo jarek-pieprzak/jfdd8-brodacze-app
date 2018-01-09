@@ -97,7 +97,7 @@ class DonutChart extends Component {
       'Other fees and bills': '#5300A4',
       'Cloth': '#0089D0',
       'Other expenses': '#40BF35',
-      'Income': 'red'
+      'Income': '#8b7cb3'
     }
 
     console.log(categories)
