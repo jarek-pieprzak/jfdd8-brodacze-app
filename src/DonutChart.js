@@ -2,87 +2,16 @@ import React, {Component} from 'react';
 import {Doughnut} from 'react-chartjs-2';
 import firebase from 'firebase'
 
-// const data = {
-//   labels: [
-//     'Red',
-//     'Green',
-//     'Yellow'
-//   ],
-//   datasets: [{
-//     data: [300, 50, 100],
-//     backgroundColor: [
-//       '#FF6384',
-//       '#36A2EB',
-//       '#FFCE56'
-//     ],
-//     hoverBackgroundColor: [
-//       '#FF6384',
-//       '#36A2EB',
-//       '#FFCE56'
-//     ]
-//   }]
-// };
-
 class DonutChart extends Component {
   state = {
-    entries: [
-      {
-        id: 1,
-        title: 'Kupiłem fryty',
-        category: 'Relax',
-        value: 400,
-          label: 'Expenses'
-      },
-      {
-        id: 2,
-        title: 'Taxi',
-        category: 'Commute',
-        value: 100,
-          label: 'Expenses'
-      },
-      {
-        id: 3,
-        title: 'Hajs od bosa',
-        value: 100,
-        category: 'Health, hygiene and chemistry',
-          label: 'Expenses'
-      },
-      {
-        id: 4,
-        title: 'Kupiłem burgiera',
-        category: 'Food',
-        value: 170,
-          label: 'Expenses'
-      },
-      {
-        id: 4,
-        title: 'Kupiłem burgiera',
-        category: 'Flat',
-        value: 170,
-          label: 'Expenses'
-      },
-      {
-        id: 4,
-        title: 'Kupiłem burgiera',
-        category: 'Other fees and bills',
-        value: 170,
-          label: 'Expenses'
-      },
-      {
-        id: 4,
-        title: 'Kupiłem burgiera',
-        category: 'Cloth',
-        value: 170,
-          label: 'Expenses'
-      },
-      {
-        id: 4,
-        title: 'Kupiłem burgiera',
-        category: 'Other expenses',
-        value: 170,
-          label: 'Expenses'
-      },
-    ]
+    entries: []
+      // {
+      //   id: 1,
+      //   title: 'Kupiłem fryty',
+      //   category: 'Relax',
+      //   value: 400,
+      //     label: 'Expenses'
+      // }
   };
 
   componentDidMount() {
@@ -147,7 +76,7 @@ class DonutChart extends Component {
       'Other fees and bills': '#5300A4',
       'Cloth': '#0089D0',
       'Other expenses': '#40BF35',
-      'Income': 'red'
+      'Income': '#8b7cb3'
     }
 
     console.log(categories)
