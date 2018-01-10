@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Bar} from 'react-chartjs-2';
+import firebase from 'firebase'
 
 // const data = {
 //   labels: ['Poniedzialek ', 'Wtorek', 'Marzec', 'April', 'May', 'June', 'July'],
@@ -29,40 +30,60 @@ class BarChart extends Component {
 
     state = {
         entries: [
-            {
-                id: 1,
-                title: 'Kupiłem fryty',
-                category: 'Relax',
-                value: 2400,
-            },
-            {
-                id: 2,
-                title: 'Taxi',
-                category: 'Commute',
-                value: -1000,
-            },
-            {
-                id: 3,
-                title: 'Hajs od bosa',
-                value: 100,
-                category: 'Health, hygiene and chemistry',
-            },
-            {
-                id: 4,
-                title: 'Kupiłem burgiera',
-                category: 'Food',
-                value: -520,
-            },
-            {
-                id: 4,
-                title: 'Kupiłem burgiera',
-                category: 'Flat',
-                value: -270,
-            },
-
+            // {
+            //     id: 1,
+            //     title: 'Kupiłem fryty',
+            //     category: 'Relax',
+            //     value: 2400,
+            // },
+            // {
+            //     id: 2,
+            //     title: 'Taxi',
+            //     category: 'Commute',
+            //     value: -1000,
+            // },
+            // {
+            //     id: 3,
+            //     title: 'Hajs od bosa',
+            //     value: 100,
+            //     category: 'Health, hygiene and chemistry',
+            // },
+            // {
+            //     id: 4,
+            //     title: 'Kupiłem burgiera',
+            //     category: 'Food',
+            //     value: -520,
+            // },
+            // {
+            //     id: 4,
+            //     title: 'Kupiłem burgiera',
+            //     category: 'Flat',
+            //     value: -270,
+            // },
         ]
     };
 
+  componentDidMount() {
+    const userUid = firebase.auth().currentUser.uid
+    firebase.database().ref('/tasks/' + userUid).on('value', snapshot => {
+        this.setState({
+          entries: Object.entries(snapshot.val() || {}).map(
+            ([key, value]) => ({
+              id: key,
+              ...value
+            })
+          ).map(
+            item => ({
+              ...item,
+              value: (item.isIncome ? 1 : -1) * parseInt(item.content),
+              category: item.isIncome ? 'Income' : item.category,
+              // value: parseFloat(item.content)
+            })
+          )
+        });
+      }
+    )
+  }
 
   render() {
 // odnalezienie wszystkich income i expenses dla całej tablicy
