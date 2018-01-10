@@ -16,21 +16,57 @@ class DonutChart extends Component {
 
   componentDidMount() {
     const userUid = firebase.auth().currentUser.uid
-    firebase.database().ref('/tasks/' + userUid).on('value', snapshot => this.setState({
-        entries: Object.entries(snapshot.val() || {}).map(
-          ([key, value]) => ({
-            id: key,
-            ...value
+    firebase.database().ref('/tasks/' + userUid).on('value', snapshot => {
+      // this.setState({
+      //   entries: Object.entries(snapshot.val() || {}).map(
+      //     ([key, value]) => ({
+      //       id: key,
+      //       ...value
+      //     })
+      //   ).map(
+      //     item => ({
+      //       ...item,
+      //       // value: (item.isIncome ? 1 : -1) * parseInt(item.content)
+      //       category: item.isIncome ? 'Income' : item.category,
+      //       value: parseFloat(item.content)
+      //     })
+      //   )
+      // });
+      const entries = Object.entries(snapshot.val() || {}).map(
+        ([key, value]) => ({
+          id: key,
+          ...value
+        })
+      ).map(
+        item => ({
+          ...item,
+          // value: (item.isIncome ? 1 : -1) * parseInt(item.content)
+          category: item.isIncome ? 'Income' : item.category,
+          value: parseFloat(item.content)
+        })
+      );
+
+      if (entries.length > 0) {
+        const totalIncome = entries.filter(item => item.isIncome).map(item => item.value).reduce((current, total) => current + total, 0);
+        const totalOutcome = entries.filter(item => !item.isIncome).map(item => item.value).reduce((current, total) => current + total, 0);
+
+        const outcomeEntries = entries.filter(item => !item.isIncome);
+
+        if (totalOutcome > totalIncome) {
+          outcomeEntries.push({
+            category: 'Debt',
+            value: -(totalIncome - totalOutcome)
           })
-        ).map(
-          item => ({
-            ...item,
-            // value: (item.isIncome ? 1 : -1) * parseInt(item.content)
-            category: item.isIncome ? 'Income' : item.category,
-            value: parseFloat(item.content)
-          })
-        )
-      })
+        } else {
+          outcomeEntries.push({
+            category: 'Budget left',
+            value: totalIncome - totalOutcome
+          });
+        }
+
+        this.setState({ entries: outcomeEntries });
+      }
+    }
     )
   }
 
@@ -58,6 +94,7 @@ class DonutChart extends Component {
       ).concat(next.category), []);
 
 
+
     const categoriesData = categories.map(
       category => this.state.entries.filter(
           entry => entry.category === category
@@ -76,7 +113,7 @@ class DonutChart extends Component {
       'Other fees and bills': '#5300A4',
       'Cloth': '#0089D0',
       'Other expenses': '#40BF35',
-      'Income': '#8b7cb3'
+      'Budget left': '#8b7cb3'
     }
 
     console.log(categories)
