@@ -24,7 +24,7 @@ class LogPage extends Component {
   render() {
     return (
       <div>
-        <div><img src="pocketbook-min-org.png" alt="logo"/></div>
+        <div><img src="../Auth/pocketbook.png" alt="logo"/></div>
         <h1>Pocketbook</h1>
         {
           this.state.user === null ?

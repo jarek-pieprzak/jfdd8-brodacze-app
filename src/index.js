@@ -21,12 +21,15 @@ import registerServiceWorker from './registerServiceWorker';
 
 setupFirebase();
 
+
 ReactDOM.render(
+
   <Router>
     <div>
       <Auth>
         <List/>
         <Charts/>
+        <button onClick={this.handleSignOut}>Wyloguj</button>
       </Auth>
 
       <p style={{ paddingTop: 50 }}>&copy; 2017 BrodaczeGroup</p>
