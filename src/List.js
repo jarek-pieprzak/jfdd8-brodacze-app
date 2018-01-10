@@ -10,7 +10,7 @@ class List extends Component {
     checkedTaskIds: [],
     outcomeChecked: false,
     incomeChecked: true,
-    options: ['- Choose from the list -',
+    options: [
       'Other expenses',
       'Relax',
       'Commute',
@@ -20,7 +20,7 @@ class List extends Component {
       'Other fees and bills',
       'Cloths',
     ],
-    category: '- choose from list -'
+    category: null
   }
 
   componentDidMount() {
@@ -123,10 +123,10 @@ class List extends Component {
               /> - outgoings:
             </label>
           </div>
-        </form>
 
-        <form action="Expenses">Outgoings:
-          <select name="Outgoings" onChange={this.handleOption}>
+          Outgoings:
+          <select name="Outgoings" required onChange={this.handleOption}>
+            <option value="" disabled selected>Wybierz kategorię</option>
             {this.state.options.map(option => <option>{option}</option>)}
           </select>
         </form>
