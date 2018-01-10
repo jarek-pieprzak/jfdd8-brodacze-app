@@ -20,7 +20,8 @@ class List extends Component {
       'Other fees and bills',
       'Cloths',
     ],
-    category: null
+    category: null,
+    error: null
   }
 
   componentDidMount() {
@@ -72,6 +73,17 @@ class List extends Component {
     event.preventDefault();
 
     const userUid = firebase.auth().currentUser.uid
+
+    if (this.state.outcomeChecked && this.state.category == null) {
+      this.setState({error: "Please select category"});
+      return;
+    }
+
+    if (this.state.taskInputValue == "") {
+      this.setState({error: "Please fill in the value"});
+      return;
+    }
+
     firebase.database().ref('/tasks/' + userUid).push({
       content: '' + this.state.taskInputValue + '',
       isIncome: this.state.incomeChecked,
@@ -91,11 +103,14 @@ class List extends Component {
     // }),
 
     this.setState({
-      taskInputValue: ''
+      taskInputValue: '',
+      error: null
     });
   };
 
+
   render() {
+
     return (
       <div>
         <p>Add your earnings and outgoings</p>
@@ -106,6 +121,7 @@ class List extends Component {
             onChange={this.handleChange}
           />
           <button>Submit</button>
+          <p>{this.state.error}</p>
           <div>
             <label>
               <input type="radio" name="digits"
@@ -115,7 +131,7 @@ class List extends Component {
               /> + earnings:
             </label>
             <label>
-              <input type="radio" name="digits"
+              <input type="radio" name="Outgoings"
                      onChange={this.handleOutcomeInputChange}
                      checked={this.state.outcomeChecked}
 
@@ -124,8 +140,8 @@ class List extends Component {
             </label>
           </div>
 
-          Outgoings:
-          <select name="Outgoings" required onChange={this.handleOption}>
+          Category:
+          <select name="Outgoings" onChange={this.handleOption}>
             <option value="" disabled selected>Wybierz kategorię</option>
             {this.state.options.map(option => <option>{option}</option>)}
           </select>
