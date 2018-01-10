@@ -3,7 +3,7 @@ import {TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, Car
 import classnames from 'classnames';
 import DonutChart from './DonutChart'
 import Bar from './Bar'
-import Calendar from './Calendar'
+import Calendar from '../Calendar'
 
 class Charts extends React.Component {
   constructor(props) {
