@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
+import './SignIn.css'
 
 class SignIn extends Component {
 
@@ -30,7 +31,7 @@ class SignIn extends Component {
         <form
           onSubmit={this.handleSubmit}
         >
-          <div>
+          <div className="adres">
             Adres e-mail :
           <input
             onChange={this.handleChange}
@@ -38,7 +39,7 @@ class SignIn extends Component {
           />
           </div>
 
-          <div>
+          <div className="haslo">
             Hasło :
           <input
             onChange={this.handleChange}
