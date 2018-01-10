@@ -3,9 +3,13 @@ import firebase from 'firebase'
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 
+import pocketbook from "./pocketbook.png"
+import './Auth.css';
+
 class Auth extends Component {
   state = {
-    user: null
+    user: null,
+    showSignIn: true
   };
 
   componentDidMount() {
@@ -20,9 +24,20 @@ class Auth extends Component {
         ? this.props.children
         : (
           <div>
-            <SignIn/>
-            <SignUp/>
-          </div>
+            <div><img src={pocketbook} className="app-logo" alt="logo"/></div>
+            <h1>pocketbook</h1>
+            <div>
+              Witaj w aplikacji zarządzającej budżetem domowym !
+              Z nami zaoszczędzisz pieniądze !
+            </div>
+            {
+             this.state.showSignIn ? <SignIn/> : <SignUp/>
+            }
+            <span>Pierwszy raz z pocketbook? </span>
+            <button onClick={() => this.setState({showSignIn: !this.state.showSignIn})}>
+              załóż konto
+            </button>
+                </div>
         )
     )
   }

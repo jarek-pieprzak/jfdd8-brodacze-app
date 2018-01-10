@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import firebase from 'firebase'
+import './SignIn.css'
 
 class SignIn extends Component {
 
@@ -26,27 +27,27 @@ class SignIn extends Component {
   render() {
     return (
       <div>
-        <h1>Sign in</h1>
+        <h1>Logowanie</h1>
         <form
           onSubmit={this.handleSubmit}
         >
-          <div>
-            E-mail
+          <div className="adres">
+            Adres e-mail :
           <input
             onChange={this.handleChange}
             name="email"
           />
           </div>
 
-          <div>
-            Password
+          <div className="haslo">
+            Hasło :
           <input
             onChange={this.handleChange}
             name="password"
             type="password"
           />
           </div>
-          <button>SIGN IN</button>
+          <button>Zaloguj</button>
         </form>
       </div>
     )
