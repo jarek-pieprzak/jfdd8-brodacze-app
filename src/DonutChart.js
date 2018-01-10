@@ -2,106 +2,71 @@ import React, {Component} from 'react';
 import {Doughnut} from 'react-chartjs-2';
 import firebase from 'firebase'
 
-// const data = {
-//   labels: [
-//     'Red',
-//     'Green',
-//     'Yellow'
-//   ],
-//   datasets: [{
-//     data: [300, 50, 100],
-//     backgroundColor: [
-//       '#FF6384',
-//       '#36A2EB',
-//       '#FFCE56'
-//     ],
-//     hoverBackgroundColor: [
-//       '#FF6384',
-//       '#36A2EB',
-//       '#FFCE56'
-//     ]
-//   }]
-// };
-
 class DonutChart extends Component {
   state = {
-    entries: [
-      {
-        id: 1,
-        title: 'Kupiłem fryty',
-        category: 'Relax',
-        value: 400,
-          label: 'Expenses'
-      },
-      {
-        id: 2,
-        title: 'Taxi',
-        category: 'Commute',
-        value: 100,
-          label: 'Expenses'
-      },
-      {
-        id: 3,
-        title: 'Hajs od bosa',
-        value: 100,
-        category: 'Health, hygiene and chemistry',
-          label: 'Expenses'
-      },
-      {
-        id: 4,
-        title: 'Kupiłem burgiera',
-        category: 'Food',
-        value: 170,
-          label: 'Expenses'
-      },
-      {
-        id: 4,
-        title: 'Kupiłem burgiera',
-        category: 'Flat',
-        value: 170,
-          label: 'Expenses'
-      },
-      {
-        id: 4,
-        title: 'Kupiłem burgiera',
-        category: 'Other fees and bills',
-        value: 170,
-          label: 'Expenses'
-      },
-      {
-        id: 4,
-        title: 'Kupiłem burgiera',
-        category: 'Cloth',
-        value: 170,
-          label: 'Expenses'
-      },
-      {
-        id: 4,
-        title: 'Kupiłem burgiera',
-        category: 'Other expenses',
-        value: 170,
-          label: 'Expenses'
-      },
-    ]
+    entries: []
+      // {
+      //   id: 1,
+      //   title: 'Kupiłem fryty',
+      //   category: 'Relax',
+      //   value: 400,
+      //     label: 'Expenses'
+      // }
   };
 
   componentDidMount() {
     const userUid = firebase.auth().currentUser.uid
-    firebase.database().ref('/tasks/' + userUid).on('value', snapshot => this.setState({
-        entries: Object.entries(snapshot.val() || {}).map(
-          ([key, value]) => ({
-            id: key,
-            ...value
+    firebase.database().ref('/tasks/' + userUid).on('value', snapshot => {
+      // this.setState({
+      //   entries: Object.entries(snapshot.val() || {}).map(
+      //     ([key, value]) => ({
+      //       id: key,
+      //       ...value
+      //     })
+      //   ).map(
+      //     item => ({
+      //       ...item,
+      //       // value: (item.isIncome ? 1 : -1) * parseInt(item.content)
+      //       category: item.isIncome ? 'Income' : item.category,
+      //       value: parseFloat(item.content)
+      //     })
+      //   )
+      // });
+      const entries = Object.entries(snapshot.val() || {}).map(
+        ([key, value]) => ({
+          id: key,
+          ...value
+        })
+      ).map(
+        item => ({
+          ...item,
+          // value: (item.isIncome ? 1 : -1) * parseInt(item.content)
+          category: item.isIncome ? 'Income' : item.category,
+          value: parseFloat(item.content)
+        })
+      );
+
+      if (entries.length > 0) {
+        const totalIncome = entries.filter(item => item.isIncome).map(item => item.value).reduce((current, total) => current + total, 0);
+        const totalOutcome = entries.filter(item => !item.isIncome).map(item => item.value).reduce((current, total) => current + total, 0);
+
+        const outcomeEntries = entries.filter(item => !item.isIncome);
+
+        if (totalOutcome > totalIncome) {
+          outcomeEntries.push({
+            category: 'Debt',
+            value: -(totalIncome - totalOutcome)
           })
-        ).map(
-          item => ({
-            ...item,
-            // value: (item.isIncome ? 1 : -1) * parseInt(item.content)
-            category: item.isIncome ? 'Income' : item.category,
-            value: parseFloat(item.content)
-          })
-        )
-      })
+        } else {
+          outcomeEntries.push({
+            category: 'Budget left',
+            value: totalIncome - totalOutcome
+          });
+        }
+
+        this.setState({ entries: outcomeEntries });
+      }
+    }
     )
   }
 
@@ -129,6 +94,7 @@ class DonutChart extends Component {
       ).concat(next.category), []);
 
 
+
     const categoriesData = categories.map(
       category => this.state.entries.filter(
           entry => entry.category === category
@@ -147,7 +113,7 @@ class DonutChart extends Component {
       'Other fees and bills': '#5300A4',
       'Cloth': '#0089D0',
       'Other expenses': '#40BF35',
-      'Income': 'red'
+      'Budget left': '#8b7cb3'
     }
 
     console.log(categories)
