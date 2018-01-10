@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col} from 'reactstrap';
 import classnames from 'classnames';
-import DonutChart from './DonutChart'
-import Bar from './Charts/Bar'
-import Calendar from './Calendar'
+import DonutChart from '../DonutChart'
+import Bar from './Bar'
+import Calendar from '../Calendar'
 
 class Charts extends React.Component {
   constructor(props) {
