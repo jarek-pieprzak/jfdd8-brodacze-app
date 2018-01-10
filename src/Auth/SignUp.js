@@ -26,12 +26,12 @@ class SignUp extends Component {
   render() {
     return (
       <div>
-        <h1>Sign up</h1>
+        <h1>Rejestracja</h1>
         <form
           onSubmit={this.handleSubmit}
         >
           <div>
-            E-mail
+            Adres e-mail :
           <input
             onChange={this.handleChange}
             name="email"
@@ -39,7 +39,7 @@ class SignUp extends Component {
           </div>
 
           <div>
-            Password
+            Hasło :
           <input
             onChange={this.handleChange}
             name="password"
@@ -47,7 +47,7 @@ class SignUp extends Component {
           />
           </div>
 
-          <button>SIGN UP</button>
+          <button>Zarejestruj się</button>
         </form>
       </div>
     )

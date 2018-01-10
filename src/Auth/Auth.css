@@ -1,0 +1,6 @@
+div {
+    text-align: center;
+    background: #56ab2f;
+    background: -webkit-linear-gradient(to left, #a8e063, #56ab2f);
+    background: linear-gradient(to left, #a8e063, #56ab2f);
+}

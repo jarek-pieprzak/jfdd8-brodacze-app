@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import firebase from 'firebase'
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
+import './Auth.css';
 
 class Auth extends Component {
   state = {

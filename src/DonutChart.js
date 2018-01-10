@@ -132,7 +132,7 @@ class DonutChart extends Component {
     const categoriesData = categories.map(
       category => this.state.entries.filter(
           entry => entry.category === category
-        ).reduce((total, next) => total + next.value, 0)
+        ).reduce((total, next) => total + next.value, 0) // <- Tu Jarkowi powiedz żeby nie odpierdalał i żeby to poprawił :D
 
     );
 

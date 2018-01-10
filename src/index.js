@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route
+  // Switch,
+  // Route
 } from 'react-router-dom';
 
 import "react-big-calendar/lib/css/react-big-calendar.css"
@@ -15,7 +15,7 @@ import setupFirebase from './setupFirebase'
 
 import Auth from './Auth'
 import Charts from './Charts';
-import Calendar from './Calendar'
+// import Calendar from './Calendar'
 import List from './List';
 import registerServiceWorker from './registerServiceWorker';
 
