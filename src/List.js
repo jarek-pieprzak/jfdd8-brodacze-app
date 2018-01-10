@@ -98,14 +98,14 @@ class List extends Component {
   render() {
     return (
       <div>
-        <p>Add your earnings and outgoings</p>
+        <p>Dodaj swoje wpływy i wydatki</p>
 
         <form onSubmit={this.handleSubmit}>
           <input
             value={this.state.taskInputValue}
             onChange={this.handleChange}
           />
-          <button>Submit</button>
+          <button>Dodaj</button>
           <div>
             <label>
               <input type="radio" name="digits"

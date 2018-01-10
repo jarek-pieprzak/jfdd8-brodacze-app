@@ -18,9 +18,7 @@ class Auth extends Component {
     )
   }
 
-  handleSignOut = () => {
-    firebase.auth().signOut()
-  };
+
 
   render() {
     return (
