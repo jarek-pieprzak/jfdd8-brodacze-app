@@ -79,7 +79,7 @@ class List extends Component {
       return;
     }
 
-    if (this.state.taskInputValue == "") {
+    if (this.state.taskInputValue === "") {
       this.setState({error: "Please fill in the value"});
       return;
     }
@@ -128,7 +128,7 @@ class List extends Component {
                      onChange={this.handleIncomeInputChange}
                      checked={this.state.incomeChecked}
 
-              /> + earnings:
+              /> + wpływy:
             </label>
             <label>
               <input type="radio" name="Outgoings"
@@ -136,7 +136,7 @@ class List extends Component {
                      checked={this.state.outcomeChecked}
 
 
-              /> - outgoings:
+              /> - wydatki:
             </label>
           </div>
 

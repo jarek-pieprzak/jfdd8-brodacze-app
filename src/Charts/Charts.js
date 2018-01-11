@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import DonutChart from './DonutChart'
 import Bar from './Bar'
 import Calendar from '../Calendar'
+import firebase from 'firebase'
 
 class Charts extends React.Component {
   constructor(props) {
@@ -22,6 +23,11 @@ class Charts extends React.Component {
       });
     }
   }
+
+  handleSignOut = () => {
+    firebase.auth().signOut()
+  };
+
 
   render() {
     return (
@@ -81,6 +87,7 @@ class Charts extends React.Component {
             </Row>
           </TabPane>
         </TabContent>
+        <button onClick={this.handleSignOut}>Wyloguj</button>
       </div>
     );
   }
