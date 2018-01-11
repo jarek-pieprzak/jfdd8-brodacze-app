@@ -36,12 +36,3 @@ ReactDOM.render(
 );
 
 registerServiceWorker();
-
-
-
-// Do dodania przycisk wylogowania
-// handleSignOut = () => {
-//   firebase.auth().signOut()
-// };
-//
-// <button onClick={this.handleSignOut}>Sign out</button>

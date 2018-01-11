@@ -20,6 +20,10 @@ class SignUp extends Component {
     firebase.auth().createUserWithEmailAndPassword(
       this.state.email,
       this.state.password
+    ).catch(
+      error => this.setState({
+        error: error.message
+      })
     )
   };
 
@@ -35,6 +39,8 @@ class SignUp extends Component {
           <input
             onChange={this.handleChange}
             name="email"
+            type="email"
+            required
           />
           </div>
 
@@ -44,6 +50,7 @@ class SignUp extends Component {
             onChange={this.handleChange}
             name="password"
             type="password"
+            required
           />
           </div>
 

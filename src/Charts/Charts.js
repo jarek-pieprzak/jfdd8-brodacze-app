@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import DonutChart from './DonutChart'
 import Bar from './Bar'
 import Calendar from '../Calendar'
+import firebase from 'firebase'
 
 class Charts extends React.Component {
   constructor(props) {
@@ -23,6 +24,11 @@ class Charts extends React.Component {
     }
   }
 
+  handleSignOut = () => {
+    firebase.auth().signOut()
+  };
+
+
   render() {
     return (
       <div>
@@ -34,7 +40,7 @@ class Charts extends React.Component {
                 this.toggle('1');
               }}
             >
-              Wykres kołowy
+              Zestawienie : wykres kołowy
             </NavLink>
           </NavItem>
           <NavItem>
@@ -44,7 +50,7 @@ class Charts extends React.Component {
                 this.toggle('2');
               }}
             >
-              Wykres słupkowy
+             wykres słupkowy
             </NavLink>
           </NavItem>
           <NavItem>
@@ -54,7 +60,7 @@ class Charts extends React.Component {
                 this.toggle('3');
               }}
             >
-              Kalendarz
+             kalendarz
             </NavLink>
           </NavItem>
         </Nav>
@@ -81,6 +87,7 @@ class Charts extends React.Component {
             </Row>
           </TabPane>
         </TabContent>
+        <button onClick={this.handleSignOut}>Wyloguj</button>
       </div>
     );
   }

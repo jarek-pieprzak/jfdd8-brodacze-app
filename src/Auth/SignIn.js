@@ -21,6 +21,10 @@ class SignIn extends Component {
     firebase.auth().signInWithEmailAndPassword(
       this.state.email,
       this.state.password
+    ).catch(
+      error => this.setState({
+        error: error.message
+      })
     )
   };
 
@@ -36,6 +40,8 @@ class SignIn extends Component {
           <input
             onChange={this.handleChange}
             name="email"
+            type="email"
+            required
           />
           </div>
 
@@ -45,6 +51,7 @@ class SignIn extends Component {
             onChange={this.handleChange}
             name="password"
             type="password"
+            required
           />
           </div>
           <button>Zaloguj</button>

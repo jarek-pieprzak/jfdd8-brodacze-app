@@ -135,7 +135,6 @@ class Bar7days extends Component {
 
     return (
       <div style={{ height: '50vh' }}>
-        <h2>Wykres slupkowy</h2>
         <Bar
           data={data}
           width={100}
