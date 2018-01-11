@@ -101,7 +101,6 @@ class DonutChart extends Component {
 
     return (
       <div>
-        <h2>Doughnut Example</h2>
         <Doughnut data={data}/>
       </div>
     );
