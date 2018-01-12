@@ -14,10 +14,13 @@ BigCalendar.setLocalizer(
 
 let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k]);
 
+
 const EventWrapper = props => {
   console.log(props);
 
-  console.log(groupBy(props.event.events, 'category'));
+  const progress = groupBy(props.event.events, 'category');
+
+console.log(progress)
 
   return (
     <ProgressBar>

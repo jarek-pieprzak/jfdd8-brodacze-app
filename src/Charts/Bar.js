@@ -92,7 +92,7 @@ class BarChart extends Component {
         label => label !== next.label
         ).concat(next.label), []);
 
-    console.log(funds);
+    // console.log(funds);
 
     const expenses = this.state.entries.filter(
       entry => entry.value < 0
