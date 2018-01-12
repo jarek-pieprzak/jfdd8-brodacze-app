@@ -33,10 +33,21 @@ class Auth extends Component {
             {
              this.state.showSignIn ? <SignIn/> : <SignUp/>
             }
-            <span>Pierwszy raz z pocketbook? </span>
-            <button onClick={() => this.setState({showSignIn: !this.state.showSignIn})}>
+            {
+              this.state.showSignIn ?
+                <span>Pierwszy raz z pocketbook? </span>
+                :
+                <span>Masz już konto? </span>
+            }
+            {
+              this.state.showSignIn ?
+
+                <button onClick={() => this.setState({showSignIn: !this.state.showSignIn})}>
               załóż konto
-            </button>
+            </button> : <button onClick={() => this.setState({showSignIn: !this.state.showSignIn})}>
+                  zaloguj się
+                </button>
+            }
                 </div>
         )
     )
