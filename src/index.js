@@ -15,7 +15,7 @@ import setupFirebase from './setupFirebase'
 
 import Auth from './Auth'
 import Charts from './Charts/Charts';
-import Calendar from './Calendar'
+// import Calendar from './Calendar'
 import List from './List';
 import registerServiceWorker from './registerServiceWorker';
 
