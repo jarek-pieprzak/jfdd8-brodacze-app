@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import BigCalendar from 'react-big-calendar';
-import events from './events.js';
 import {ProgressBar} from 'react-bootstrap';
 import firebase from 'firebase'
+import groupBy from 'lodash.groupby'
 
 
 
@@ -16,6 +16,9 @@ let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k]);
 
 const EventWrapper = props => {
   console.log(props);
+
+  console.log(groupBy(props.event.events, 'category'));
+
   return (
     <ProgressBar>
       {
@@ -48,8 +51,8 @@ class Calendar extends Component {
               // value: (item.isIncome ? 1 : -1) * parseInt(item.content)
               category: item.isIncome ? 'Income' : item.category,
               value: parseFloat(item.content),
-              start: new Date(item.date),
-              end: new Date(item.date)
+              start: new Date(moment(item.date).format('L')),
+              end: new Date(moment(item.date).format('L'))
             })
           )
         });
@@ -57,12 +60,21 @@ class Calendar extends Component {
     )
   }
   render() {
+
+    const groupedEvents = Object.entries(groupBy(this.state.events, event => event.start.getTime())).map(([key, value]) => ({
+      title: 'Foo',
+      start: new Date(parseInt(key)),
+      end: new Date(parseInt(key)),
+      allDay: true,
+      events: value
+    }))
+
     return (
 
       <div style={{height: 600}}>
         <BigCalendar
           {...this.props}
-          events={this.state.events}
+          events={groupedEvents}
           views={allViews}
           step={30}
           components={{

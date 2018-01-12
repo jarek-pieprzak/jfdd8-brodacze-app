@@ -8,6 +8,7 @@
     "calendar": "^0.1.0",
     "chart.js": "^2.7.1",
     "firebase": "^4.8.1",
+    "lodash.groupby": "^4.6.0",
     "moment": "^2.20.1",
     "popper.js": "^1.12.9",
     "react": "^16.2.0",
