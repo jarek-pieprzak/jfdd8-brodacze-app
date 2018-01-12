@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
-import firebase from 'firebase'
+import { connect } from 'react-redux'
+import { signUp } from '../state/auth';
+
+const errorMessages = {
+  'auth/email-already-in-use': 'No już mamy takie konto'
+};
 
 class SignUp extends Component {
 
   state = {
     email: '',
-    password: ''
+    password: '',
+    error: null
   };
 
   handleChange = event => {
@@ -17,13 +23,11 @@ class SignUp extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    firebase.auth().createUserWithEmailAndPassword(
+    this.props.signUp(
       this.state.email,
       this.state.password
     ).catch(
-      error => this.setState({
-        error: error.message
-      })
+      error => this.setState({ error })
     )
   };
 
@@ -31,6 +35,7 @@ class SignUp extends Component {
     return (
       <div>
         <h1>Rejestracja</h1>
+        {this.state.error && <p style={{ color: 'red' }}>{errorMessages[this.state.error.code]}</p>}
         <form
           onSubmit={this.handleSubmit}
         >
@@ -61,4 +66,7 @@ class SignUp extends Component {
   }
 }
 
-export default SignUp
+export default connect(
+  null,
+  { signUp }
+)(SignUp)

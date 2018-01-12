@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import firebase from 'firebase'
+import { connect } from 'react-redux'
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 
@@ -11,12 +11,6 @@ class Auth extends Component {
     user: null,
     showSignIn: true
   };
-
-  componentDidMount() {
-    firebase.auth().onAuthStateChanged(
-      user => this.setState({ user })
-    )
-  }
 
   render() {
     return (
@@ -54,50 +48,9 @@ class Auth extends Component {
   }
 }
 
-export default Auth
+export default connect(
+  state => ({
+    user: state.auth.user
+  })
+)(Auth)
 
-
-// import firebase from 'firebase'
-//
-// const initialState = {
-//   user: null
-// };
-//
-// let unsubscribe = null;
-// export const enableSync = () => dispatch => {
-//   dispatch(disableSync());
-//   unsubscribe = firebase.auth().onAuthStateChanged(
-//     user => dispatch({ type: 'auth/SET_USER', user }),
-//     error => console.log(error,
-//       () => console.log('done')
-//     )
-// };
-//
-// export const disableSync = () => dispatch => {
-//   if (unsubscribe !== null) {
-//     unsubscribe()
-//   }
-// };
-//
-// export const signIn = (...args) => dispatch => {
-//   return firebase.auth().signInWithEmailAndPassword(...args)
-// };
-//
-// export const signUp = (email, password) => dispatch => {
-//   return firebase.auth().createUserWithEmailAndPassword(email, password)
-// };
-//
-// export const signOut = () => dispatch => {
-//   firebase.auth().signOut()
-// };
-//
-// export default (state = initialState, action = {}) => {
-//   switch(action.type) {
-//     case 'auth/SET_USER':
-//       return {
-//         user: action.user
-//       };
-//     default:
-//       return state
-//   }
-// }

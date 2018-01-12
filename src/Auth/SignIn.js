@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
-import firebase from 'firebase'
+import { connect } from 'react-redux'
 import './SignIn.css'
+import { signIn } from '../state/auth';
 
 class SignIn extends Component {
 
   state = {
     email: '',
-    password: ''
+    password: '',
+    error: null
   };
 
   handleChange = event => {
@@ -18,13 +20,11 @@ class SignIn extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    firebase.auth().signInWithEmailAndPassword(
+    this.props.signIn(
       this.state.email,
       this.state.password
     ).catch(
-      error => this.setState({
-        error: error.message
-      })
+      error => this.setState({ error })
     )
   };
 
@@ -32,6 +32,7 @@ class SignIn extends Component {
     return (
       <div>
         <h1>Logowanie</h1>
+        { this.state.error && <p style={{ color: 'red' }}>{this.state.error.message}</p>}
         <form
           onSubmit={this.handleSubmit}
         >
@@ -55,11 +56,13 @@ class SignIn extends Component {
           />
           </div>
           <button>Zaloguj</button>
-
         </form>
       </div>
     )
   }
 }
 
-export default SignIn
+export default connect(
+  null,
+  { signIn }
+)(SignIn)
