@@ -4,7 +4,6 @@ const initialState = {
   user: null
 };
 
-
 export const signIn = (...args) => dispatch => {
   return firebase.auth().signInWithEmailAndPassword(...args)
 };

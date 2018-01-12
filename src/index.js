@@ -13,7 +13,7 @@ import './index.css';
 
 import store from './store'
 
-import Auth from './state/auth'
+import Auth from './Auth'
 import Charts from './Charts/Charts';
 import List from './List';
 import registerServiceWorker from './registerServiceWorker';
@@ -26,7 +26,6 @@ ReactDOM.render(
           <List/>
           <Charts/>
         </Auth>
-
         <p style={{paddingTop: 50}}>&copy; 2017 BrodaczeGroup</p>
       </div>
     </Router>

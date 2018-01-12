@@ -2,7 +2,7 @@ import { compose, createStore, combineReducers, applyMiddleware } from 'redux'
 import persistState from 'redux-localstorage'
 import thunk from 'redux-thunk';
 import setupFirebase from './setupFirebase'
-import auth, { enableSync, disableSync } from './state/auth'
+import auth from './state/auth'
 
 setupFirebase();
 
