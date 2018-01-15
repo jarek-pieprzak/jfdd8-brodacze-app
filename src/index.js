@@ -28,9 +28,9 @@ ReactDOM.render(
 
     <div className="row">
       <Auth>
-        <div style={{
+//         <div style={{
 
-        }}>
+//         }}>
         <img src={pocketbook} className="app-logo" alt="logo"/>
         <button onClick={this.handleSignOut}>Wyloguj</button>
       </div>
@@ -43,6 +43,7 @@ ReactDOM.render(
     </div>
     </div>
   </Router>,
+
   document.getElementById('root')
 );
 
