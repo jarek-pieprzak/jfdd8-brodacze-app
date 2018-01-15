@@ -17,7 +17,26 @@ let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k]);
 const EventWrapper = props => {
   console.log(props);
 
-  console.log(groupBy(props.event.events, 'category'));
+  console.log('foobar',  props.event, groupBy(props.event.events, 'category'));
+  let byCategory = groupBy(props.event.events, 'category');
+
+  // let income = byCategory['Income'].reduce...
+
+  // let outcome = Object.keys(byCategory).map(categoryName => (
+  //   byCategory[categoryName].reduce...
+  // )
+
+
+  return (
+    <ProgressBar>
+      {
+        Object.keys(groupBy(props.event.events, 'category')).map((category, index) => (
+          <ProgressBar key={index} now={10}/>
+        ))
+      }
+      {/*<ProgressBar bsStyle="foobar" key={3} now={10}/>*/}
+    </ProgressBar>
+  )
 
   return (
     <ProgressBar>
@@ -61,7 +80,9 @@ class Calendar extends Component {
   }
   render() {
 
-    const groupedEvents = Object.entries(groupBy(this.state.events, event => event.start.getTime())).map(([key, value]) => ({
+    const groupedEvents = Object.entries(
+      groupBy(this.state.events, event =>
+        event.start.getTime())).map(([key, value]) => ({
       title: 'Foo',
       start: new Date(parseInt(key)),
       end: new Date(parseInt(key)),
@@ -75,7 +96,7 @@ class Calendar extends Component {
         <BigCalendar
           {...this.props}
           events={groupedEvents}
-          views={allViews}
+          views={['month']}
           step={30}
           components={{
             eventWrapper: EventWrapper

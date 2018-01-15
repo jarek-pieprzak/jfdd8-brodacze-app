@@ -26,7 +26,8 @@ class List extends Component {
 
   componentDidMount() {
     const userUid = firebase.auth().currentUser.uid
-    firebase.database().ref('/tasks/' + userUid).on('value', snapshot => this.setState({
+    firebase.database().ref('/tasks/' + userUid).on('value', snapshot =>
+      this.setState({
         tasks: Object.entries(snapshot.val() || {}).map(
           ([key, value]) => ({
             id: key,
