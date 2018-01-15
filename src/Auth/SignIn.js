@@ -1,12 +1,13 @@
-import React, { Component } from 'react'
-import firebase from 'firebase'
-import './SignIn.css'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { signIn } from '../state/auth';
 
 class SignIn extends Component {
 
   state = {
     email: '',
-    password: ''
+    password: '',
+    error: null
   };
 
   handleChange = event => {
@@ -18,25 +19,24 @@ class SignIn extends Component {
   handleSubmit = event => {
     event.preventDefault();
 
-    firebase.auth().signInWithEmailAndPassword(
+    this.props.signIn(
       this.state.email,
       this.state.password
     ).catch(
-      error => this.setState({
-        error: error.message
-      })
+      error => this.setState({ error })
     )
   };
 
   render() {
     return (
       <div>
-        <h1>Logowanie</h1>
+        <h1>Sign In</h1>
+        {this.state.error && <p style={{ color: 'red' }}>{this.state.error.message}</p>}
         <form
           onSubmit={this.handleSubmit}
         >
           <div className="adres">
-            Adres e-mail :
+            E-mail :
           <input
             onChange={this.handleChange}
             name="email"
@@ -46,7 +46,7 @@ class SignIn extends Component {
           </div>
 
           <div className="haslo">
-            Hasło :
+            Password :
           <input
             onChange={this.handleChange}
             name="password"
@@ -54,11 +54,14 @@ class SignIn extends Component {
             required
           />
           </div>
-          <button>Zaloguj</button>
+          <button>Log in</button>
         </form>
       </div>
     )
   }
 }
 
-export default SignIn
+export default connect(
+  null,
+  { signIn }
+)(SignIn)

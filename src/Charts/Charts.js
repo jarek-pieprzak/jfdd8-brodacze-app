@@ -31,7 +31,7 @@ class Charts extends React.Component {
 
   render() {
     return (
-      <div className="col-sm-12 col-md-6">
+      <div>
         <Nav tabs>
           <NavItem>
             <NavLink
@@ -40,7 +40,7 @@ class Charts extends React.Component {
                 this.toggle('1');
               }}
             >
-              Outgoings structure
+              Budget : pie chart
             </NavLink>
           </NavItem>
           <NavItem>
@@ -50,7 +50,7 @@ class Charts extends React.Component {
                 this.toggle('2');
               }}
             >
-              Bar chart
+             bar graph
             </NavLink>
           </NavItem>
           <NavItem>
@@ -60,33 +60,34 @@ class Charts extends React.Component {
                 this.toggle('3');
               }}
             >
-             Calendar
+             calendar
             </NavLink>
           </NavItem>
         </Nav>
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
             <Row>
-              <Col>
+              <Col sm="4">
                 <DonutChart/>
               </Col>
             </Row>
           </TabPane>
           <TabPane tabId="2">
             <Row>
-              <Col>
+              <Col sm="4">
                 <Bar/>
               </Col>
             </Row>
           </TabPane>
           <TabPane tabId="3">
             <Row>
-              <Col sm="12">
+              <Col sm="4">
                 <Calendar/>
               </Col>
             </Row>
           </TabPane>
         </TabContent>
+        <button onClick={this.handleSignOut}>Wyloguj</button>
       </div>
     );
   }

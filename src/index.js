@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
 import {
   BrowserRouter as Router,
   Switch,
@@ -11,20 +12,18 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 import './index.css';
 
-import setupFirebase from './setupFirebase'
+import store from './store'
 
 import Auth from './Auth'
-import Charts from './Charts/Charts';
-import Calendar from './Calendar'
+import Charts from './Charts';
 import List from './List';
 import registerServiceWorker from './registerServiceWorker';
 import pocketbook from "./img/pocketbook.png"
 
-setupFirebase();
 
 ReactDOM.render(
-  <Router>
-    <div>
+  <Provider store={store}>
+      <div>
 
       <div className="row">
         <Auth>
@@ -42,7 +41,7 @@ ReactDOM.render(
         </div>
       </div>
     </div>
-  </Router>,
+  </Provider>,
   document.getElementById('root')
 );
 
