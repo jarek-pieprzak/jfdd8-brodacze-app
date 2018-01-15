@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
-import firebase from 'firebase'
+import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 
@@ -8,39 +10,48 @@ import './Auth.css';
 
 class Auth extends Component {
   state = {
-    user: null,
     showSignIn: true
   };
 
-  componentDidMount() {
-    firebase.auth().onAuthStateChanged(
-      user => this.setState({ user })
-    )
-  }
-
   render() {
     return (
-      this.state.user
+      this.props.user
         ? this.props.children
         : (
           <div>
             <div><img src={pocketbook} className="app-logo" alt="logo"/></div>
             <h1>pocketbook</h1>
             <div>
-              Witaj w aplikacji zarządzającej budżetem domowym !
-              Z nami zaoszczędzisz pieniądze !
+              Welcome to our home budget app !
+              You will save some money with us !
             </div>
             {
-             this.state.showSignIn ? <SignIn/> : <SignUp/>
+              this.state.showSignIn ? <SignIn/> : <SignUp/>
             }
-            <span>Pierwszy raz z pocketbook? </span>
-            <button onClick={() => this.setState({showSignIn: !this.state.showSignIn})}>
-              załóż konto
-            </button>
-                </div>
+            {
+              this.state.showSignIn ?
+                <span>First time with pocketbook? </span>
+                :
+                <span>Have an account? </span>
+            }
+            {
+              this.state.showSignIn ?
+
+                <button onClick={() => this.setState({showSignIn: !this.state.showSignIn})}>
+                  Register
+                </button> : <button onClick={() => this.setState({showSignIn: !this.state.showSignIn})}>
+                  Log in
+                </button>
+            }
+          </div>
         )
     )
   }
 }
 
-export default Auth
+export default connect(
+    state => ({
+      user: state.auth.user
+    })
+)(Auth)
+

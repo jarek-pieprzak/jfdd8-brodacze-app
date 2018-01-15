@@ -1,6 +1,25 @@
 body {
-  margin: 0;
-  padding: 0;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 5vh 3vw 5vh 3vw;
   font-family: sans-serif;
 }
+.skew {
+  background: #56ab2f;
+  background: -webkit-linear-gradient(to left, #a8e063, #56ab2f);
+  background: linear-gradient(to left, #a8e063, #56ab2f);
+  transform: skewY(2deg);
+}
+.skew1 {
+  background: white;
+  transform: skewY(2deg);
+}
 
+.unskew {
+  transform: skewY(-2deg);
+}
+.unskew1 {
+  transform: skewY(-2deg);
+}
