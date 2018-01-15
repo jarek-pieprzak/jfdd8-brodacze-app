@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import './SignIn.css'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { signIn } from '../state/auth';
 
 class SignIn extends Component {
@@ -31,13 +30,13 @@ class SignIn extends Component {
   render() {
     return (
       <div>
-        <h1>Logowanie</h1>
-        { this.state.error && <p style={{ color: 'red' }}>{this.state.error.message}</p>}
+        <h1>Sign In</h1>
+        {this.state.error && <p style={{ color: 'red' }}>{this.state.error.message}</p>}
         <form
           onSubmit={this.handleSubmit}
         >
           <div className="adres">
-            Adres e-mail :
+            E-mail :
           <input
             onChange={this.handleChange}
             name="email"
@@ -47,7 +46,7 @@ class SignIn extends Component {
           </div>
 
           <div className="haslo">
-            Hasło :
+            Password :
           <input
             onChange={this.handleChange}
             name="password"
@@ -55,7 +54,7 @@ class SignIn extends Component {
             required
           />
           </div>
-          <button>Zaloguj</button>
+          <button>Log in</button>
         </form>
       </div>
     )

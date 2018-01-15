@@ -113,14 +113,14 @@ class List extends Component {
 
     return (
       <div>
-        <p>Dodaj swoje wpływy i wydatki</p>
+        <p>Add your savings and outgoings</p>
 
         <form onSubmit={this.handleSubmit}>
           <input
             value={this.state.taskInputValue}
             onChange={this.handleChange}
           />
-          <button>Dodaj</button>
+          <button>Add</button>
           <p>{this.state.error}</p>
           <div>
             <label>
@@ -128,7 +128,7 @@ class List extends Component {
                      onChange={this.handleIncomeInputChange}
                      checked={this.state.incomeChecked}
 
-              /> + wpływy:
+              /> + income:
             </label>
             <label>
               <input type="radio" name="Outgoings"
@@ -136,13 +136,13 @@ class List extends Component {
                      checked={this.state.outcomeChecked}
 
 
-              /> - wydatki:
+              /> - expense:
             </label>
           </div>
 
-          Kategoria :
+          Category :
           <select name="Outgoings" onChange={this.handleOption}>
-            <option value="" disabled selected> - - - wybierz - - -</option>
+            <option value="" disabled selected> - - - choose - - -</option>
             {this.state.options.map(option => <option>{option}</option>)}
           </select>
         </form>
@@ -162,7 +162,7 @@ class List extends Component {
                   <button
                     data-task-id={task.id}
                     onClick={this.handleDeleteClick}>
-                    Usuń
+                    Delete
                   </button>
                 </li>
               )

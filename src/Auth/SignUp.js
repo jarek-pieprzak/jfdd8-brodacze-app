@@ -1,10 +1,6 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { signUp } from '../state/auth';
-
-const errorMessages = {
-  'auth/email-already-in-use': 'No już mamy takie konto'
-};
 
 class SignUp extends Component {
 
@@ -34,13 +30,13 @@ class SignUp extends Component {
   render() {
     return (
       <div>
-        <h1>Rejestracja</h1>
-        {this.state.error && <p style={{ color: 'red' }}>{errorMessages[this.state.error.code]}</p>}
+        <h1>Sign Up</h1>
+        {this.state.error && <p style={{ color: 'red' }}>{this.state.error.message}</p>}
         <form
           onSubmit={this.handleSubmit}
         >
           <div>
-            Adres e-mail :
+            E-mail :
           <input
             onChange={this.handleChange}
             name="email"
@@ -50,7 +46,7 @@ class SignUp extends Component {
           </div>
 
           <div>
-            Hasło :
+            Password :
           <input
             onChange={this.handleChange}
             name="password"
@@ -58,8 +54,7 @@ class SignUp extends Component {
             required
           />
           </div>
-
-          <button>Zarejestruj się</button>
+          <button>Sign Up</button>
         </form>
       </div>
     )

@@ -1,8 +1,8 @@
-import { compose, createStore, combineReducers, applyMiddleware } from 'redux'
-import persistState from 'redux-localstorage'
+import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
+import persistState from 'redux-localstorage';
 import thunk from 'redux-thunk';
-import setupFirebase from './setupFirebase'
-import auth from './state/auth'
+import setupFirebase from './setupFirebase';
+import auth, { enableSync, disableSync } from './state/auth';
 
 setupFirebase();
 
@@ -21,5 +21,7 @@ const store = createStore(
   reducer,
   enhancer
 );
+
+store.dispatch(enableSync());
 
 export default store

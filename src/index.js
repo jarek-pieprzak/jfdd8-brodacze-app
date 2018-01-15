@@ -14,7 +14,7 @@ import './index.css';
 import store from './store'
 
 import Auth from './Auth'
-import Charts from './Charts/Charts';
+import Charts from './Charts';
 import List from './List';
 import registerServiceWorker from './registerServiceWorker';
 
@@ -22,15 +22,16 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <div>
+
         <Auth>
           <List/>
           <Charts/>
         </Auth>
-        <p style={{paddingTop: 50}}>&copy; 2017 BrodaczeGroup</p>
+
+        <p style={{paddingTop: 50}}>&copy; 2017 Team Brodacze</p>
       </div>
     </Router>
   </Provider>,
   document.getElementById('root')
 );
-
 registerServiceWorker();

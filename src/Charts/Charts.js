@@ -40,7 +40,7 @@ class Charts extends React.Component {
                 this.toggle('1');
               }}
             >
-              Zestawienie : wykres kołowy
+              Budget : pie chart
             </NavLink>
           </NavItem>
           <NavItem>
@@ -50,7 +50,7 @@ class Charts extends React.Component {
                 this.toggle('2');
               }}
             >
-             wykres słupkowy
+             bar graph
             </NavLink>
           </NavItem>
           <NavItem>
@@ -60,7 +60,7 @@ class Charts extends React.Component {
                 this.toggle('3');
               }}
             >
-             kalendarz
+             calendar
             </NavLink>
           </NavItem>
         </Nav>

@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, {Component} from 'react';
+import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 
@@ -21,36 +23,39 @@ class Auth extends Component {
             <div><img src={pocketbook} className="app-logo" alt="logo"/></div>
             <h1>pocketbook</h1>
             <div>
-              Witaj w aplikacji zarządzającej budżetem domowym !
-              Z nami zaoszczędzisz pieniądze !
+              Welcome to our home budget app !
+              You will save some money with us !
             </div>
             {
-             this.state.showSignIn ? <SignIn/> : <SignUp/>
+              this.state.showSignIn ? <SignIn/> : <SignUp/>
             }
             {
               this.state.showSignIn ?
-                <span>Pierwszy raz z pocketbook? </span>
+                <span>First time with pocketbook? </span>
                 :
-                <span>Masz już konto? </span>
+                <span>Have an account? </span>
             }
             {
               this.state.showSignIn ?
 
                 <button onClick={() => this.setState({showSignIn: !this.state.showSignIn})}>
-              załóż konto
-            </button> : <button onClick={() => this.setState({showSignIn: !this.state.showSignIn})}>
-                  zaloguj się
+                  Register
+                </button> : <button onClick={() => this.setState({showSignIn: !this.state.showSignIn})}>
+                  Log in
                 </button>
             }
-                </div>
+          </div>
         )
     )
   }
 }
 
-export default connect(
-  state => ({
-    user: state.auth.user
-  })
+export default compose(
+  withRouter,
+  connect(
+    state => ({
+      user: state.auth.user
+    })
+  )
 )(Auth)
 

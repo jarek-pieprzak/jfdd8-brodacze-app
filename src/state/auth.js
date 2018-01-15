@@ -4,12 +4,33 @@ const initialState = {
   user: null
 };
 
+let unsubscribe = null;
+export const enableSync = () => dispatch => {
+  dispatch(disableSync());
+  unsubscribe = firebase.auth().onAuthStateChanged(
+    user => dispatch({ type: 'auth/SET_USER', user }),
+    error => console.log(error),
+    () => console.log('done')
+  )
+};
+
+export const disableSync = () => dispatch => {
+  if (unsubscribe !== null) {
+    unsubscribe()
+  }
+};
+
 export const signIn = (...args) => dispatch => {
   return firebase.auth().signInWithEmailAndPassword(...args)
 };
 
-export const signUp = (email, password) => dispatch => {
-  return firebase.auth().createUserWithEmailAndPassword(email, password)
+export const signUp = (email, password, other) => dispatch => {
+  return firebase.auth().createUserWithEmailAndPassword(
+    email,
+    password
+  ).then(
+    user => firebase.database().ref('/users/' + user.uid).set(other)
+  )
 };
 
 export default (state = initialState, action = {}) => {
