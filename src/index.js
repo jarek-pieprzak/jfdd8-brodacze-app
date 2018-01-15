@@ -25,13 +25,17 @@ ReactDOM.render(
   <Router>
     <div>
       <Auth>
-        <List/>
-        <Charts/>
+        <div>
+          <List/>
+          <Charts/>
+        </div>
       </Auth>
-
-      <p style={{ paddingTop: 50 }}>&copy; 2017 BrodaczeGroup</p>
+      <div class="footer">
+        <p style={{ paddingTop: 50 }}>&copy; 2017 BrodaczeGroup</p>
+      </div>
     </div>
   </Router>,
+
   document.getElementById('root')
 );
 
