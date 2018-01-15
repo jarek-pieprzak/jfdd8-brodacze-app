@@ -20,7 +20,6 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
       <div>
 
         <Auth>
@@ -30,7 +29,7 @@ ReactDOM.render(
 
         <p style={{paddingTop: 50}}>&copy; 2017 Team Brodacze</p>
       </div>
-    </Router>
+
   </Provider>,
   document.getElementById('root')
 );

@@ -8,9 +8,7 @@ let unsubscribe = null;
 export const enableSync = () => dispatch => {
   dispatch(disableSync());
   unsubscribe = firebase.auth().onAuthStateChanged(
-    user => dispatch({ type: 'auth/SET_USER', user }),
-    error => console.log(error),
-    () => console.log('done')
+    user => dispatch({type: 'auth/SET_USER', user})
   )
 };
 
@@ -34,7 +32,7 @@ export const signUp = (email, password, other) => dispatch => {
 };
 
 export default (state = initialState, action = {}) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'auth/SET_USER':
       return {
         user: action.user

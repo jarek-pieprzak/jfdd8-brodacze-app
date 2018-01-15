@@ -1,5 +1,5 @@
 import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
-import persistState from 'redux-localstorage';
+//import persistState from 'redux-localstorage';
 import thunk from 'redux-thunk';
 import setupFirebase from './setupFirebase';
 import auth, { enableSync, disableSync } from './state/auth';
@@ -10,7 +10,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const enhancer = composeEnhancers(
   applyMiddleware(thunk),
-  persistState(['auth'], { key: 'pocketbook'})
+  //persistState(['auth'], { key: 'pocketbook'})
 );
 
 const reducer = combineReducers({

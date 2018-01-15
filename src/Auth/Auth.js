@@ -10,13 +10,12 @@ import './Auth.css';
 
 class Auth extends Component {
   state = {
-    user: null,
     showSignIn: true
   };
 
   render() {
     return (
-      this.state.user
+      this.props.user
         ? this.props.children
         : (
           <div>
@@ -50,12 +49,9 @@ class Auth extends Component {
   }
 }
 
-export default compose(
-  withRouter,
-  connect(
+export default connect(
     state => ({
       user: state.auth.user
     })
-  )
 )(Auth)
 
