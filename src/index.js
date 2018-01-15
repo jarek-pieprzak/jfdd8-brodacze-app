@@ -26,24 +26,23 @@ ReactDOM.render(
   <Router>
     <div>
 
-    <div className="row">
-      <Auth>
-//         <div style={{
+      <div className="row">
+        <Auth>
+          <div style={{
 
-//         }}>
-        <img src={pocketbook} className="app-logo" alt="logo"/>
-        <button onClick={this.handleSignOut}>Wyloguj</button>
+          }}>
+            <img src={pocketbook} className="app-logo" alt="logo"/>
+            <button onClick={this.handleSignOut}>Wyloguj</button>
+          </div>
+          <List/>
+          <Charts/>
+        </Auth>
+        <div className="col-md-12">
+          <p style={{ paddingTop: 50 }}>&copy; 2017 BrodaczeGroup</p>
+        </div>
       </div>
-        <List/>
-        <Charts/>
-      </Auth>
-      <div className="col-md-12">
-        <p style={{ paddingTop: 50 }}>&copy; 2017 BrodaczeGroup</p>
-      </div>
-    </div>
     </div>
   </Router>,
-
   document.getElementById('root')
 );
 
