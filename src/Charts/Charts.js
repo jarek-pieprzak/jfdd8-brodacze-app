@@ -31,7 +31,7 @@ class Charts extends React.Component {
 
   render() {
     return (
-      <div className="col-md-6 charts">
+      <div className="col-sm-12 col-md-6">
         <Nav tabs>
           <NavItem>
             <NavLink
