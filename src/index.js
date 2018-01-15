@@ -20,6 +20,7 @@ import List from './List';
 import registerServiceWorker from './registerServiceWorker';
 import pocketbook from "./img/pocketbook.png"
 
+
 ReactDOM.render(
   <Provider store={store}>
       <div>
@@ -40,7 +41,6 @@ ReactDOM.render(
         </div>
       </div>
     </div>
-  </Router>
   </Provider>,
   document.getElementById('root')
 );
