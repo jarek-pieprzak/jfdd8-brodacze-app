@@ -31,7 +31,7 @@ class Charts extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="col-sm-12 col-md-6">
         <Nav tabs>
           <NavItem>
             <NavLink
@@ -67,27 +67,26 @@ class Charts extends React.Component {
         <TabContent activeTab={this.state.activeTab}>
           <TabPane tabId="1">
             <Row>
-              <Col sm="4">
+              <Col>
                 <DonutChart/>
               </Col>
             </Row>
           </TabPane>
           <TabPane tabId="2">
             <Row>
-              <Col sm="4">
+              <Col>
                 <Bar/>
               </Col>
             </Row>
           </TabPane>
           <TabPane tabId="3">
             <Row>
-              <Col sm="4">
+              <Col sm="12">
                 <Calendar/>
               </Col>
             </Row>
           </TabPane>
         </TabContent>
-        <button onClick={this.handleSignOut}>Wyloguj</button>
       </div>
     );
   }

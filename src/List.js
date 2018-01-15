@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import moment from 'moment'
 import firebase from 'firebase'
 
+
+
 class List extends Component {
 
   state = {
@@ -102,8 +104,9 @@ class List extends Component {
   render() {
 
     return (
-      <div>
+      <div className="col-md-6">
         <p>Set your incomings and outgoings</p>
+
 
         <form onSubmit={this.handleSubmit}>
           <input
