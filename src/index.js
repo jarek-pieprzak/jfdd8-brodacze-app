@@ -18,18 +18,27 @@ import Charts from './Charts/Charts';
 import Calendar from './Calendar'
 import List from './List';
 import registerServiceWorker from './registerServiceWorker';
+import pocketbook from "./img/pocketbook.png"
 
 setupFirebase();
 
 ReactDOM.render(
   <Router>
+    <div>
+
     <div className="row">
       <Auth>
+        <div>
+        <img src={pocketbook} className="app-logo" alt="logo"/>
+        <button onClick={this.handleSignOut}>Wyloguj</button>
+      </div>
         <List/>
         <Charts/>
       </Auth>
-
-      <p style={{ paddingTop: 50 }}>&copy; 2017 BrodaczeGroup</p>
+      <div className="col-md-12">
+        <p style={{ paddingTop: 50 }}>&copy; 2017 BrodaczeGroup</p>
+      </div>
+    </div>
     </div>
   </Router>,
   document.getElementById('root')
