@@ -28,7 +28,9 @@ ReactDOM.render(
 
     <div className="row">
       <Auth>
-        <div>
+        <div style={{
+
+        }}>
         <img src={pocketbook} className="app-logo" alt="logo"/>
         <button onClick={this.handleSignOut}>Wyloguj</button>
       </div>
