@@ -23,7 +23,7 @@ setupFirebase();
 
 ReactDOM.render(
   <Router>
-    <div>
+    <div className="row">
       <Auth>
         <List/>
         <Charts/>

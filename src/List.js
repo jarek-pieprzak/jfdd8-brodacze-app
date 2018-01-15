@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import moment from 'moment'
 import firebase from 'firebase'
 
+
+
 class List extends Component {
 
   state = {
@@ -112,7 +114,7 @@ class List extends Component {
   render() {
 
     return (
-      <div>
+      <div className="col-md-6">
         <p>Dodaj swoje wpływy i wydatki</p>
 
         <form onSubmit={this.handleSubmit}>
