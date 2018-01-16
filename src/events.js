@@ -3,7 +3,7 @@ export default [
     'title': '150 PLN rozrywka',
     spendings: [
       {
-        type: 'success', value: 10
+        type: 'warning', value: 10
       },
       {
         type: 'warning', value: 20

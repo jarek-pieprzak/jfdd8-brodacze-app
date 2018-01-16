@@ -6,6 +6,7 @@ import groupBy from 'lodash.groupby'
 
 
 
+
 import moment from 'moment';
 
 BigCalendar.setLocalizer(
@@ -15,26 +16,35 @@ BigCalendar.setLocalizer(
 let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k]);
 
 const EventWrapper = props => {
-  console.log(props);
 
-  console.log('foobar',  props.event, groupBy(props.event.events, 'category'));
   let byCategory = groupBy(props.event.events, 'category');
 
-  // let income = byCategory['Income'].reduce...
+  console.log(byCategory);
 
-  // let outcome = Object.keys(byCategory).map(categoryName => (
-  //   byCategory[categoryName].reduce...
-  // )
+  //
+  // let income = byCategory['Income'].reduce() {
+  //   return
+  // });
+
+  let { Income, ...other } = byCategory
+
+  let outcome = Object.entries(other).map(
+    ([categoryName, entries]) => ({
+      categoryName,
+      total: entries.reduce((total, next) => total + next.value, 0)
+})
+  )
+
+    console.log(outcome)
 
 
   return (
     <ProgressBar>
       {
         Object.keys(groupBy(props.event.events, 'category')).map((category, index) => (
-          <ProgressBar key={index} now={10}/>
+          <ProgressBar key={index} now={20}/>
         ))
       }
-      {/*<ProgressBar bsStyle="foobar" key={3} now={10}/>*/}
     </ProgressBar>
   )
 
