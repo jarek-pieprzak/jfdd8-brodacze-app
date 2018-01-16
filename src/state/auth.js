@@ -22,6 +22,15 @@ export const signIn = (...args) => dispatch => {
   return firebase.auth().signInWithEmailAndPassword(...args)
 };
 
+export const signInGoogle = (...args) => dispatch => {
+  var provider = new firebase.auth.GoogleAuthProvider();
+  return firebase.auth().signInWithPopup(provider)
+};
+
+export const signInFacebook = (...args) => dispatch => {
+  return firebase.auth().signInWithEmailAndPassword(...args)
+};
+
 export const signUp = (email, password, other) => dispatch => {
   return firebase.auth().createUserWithEmailAndPassword(
     email,
