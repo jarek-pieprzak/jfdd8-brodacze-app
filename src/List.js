@@ -112,7 +112,7 @@ class List extends Component {
   render() {
 
     return (
-      <div>
+      <div className="col-md-6">
         <p>Add your savings and outgoings</p>
 
         <form onSubmit={this.handleSubmit}>
