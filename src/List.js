@@ -14,7 +14,7 @@ class List extends Component {
       'Other expenses',
       'Relax',
       'Commute',
-      'Health, hygene and chemistry',
+      'Health, hygiene and chemistry',
       'Food',
       'Flat',
       'Other fees and bills',
