@@ -14,7 +14,7 @@ class List extends Component {
       'Other expenses',
       'Relax',
       'Commute',
-      'Health, hygene and chemistry',
+      'Health, hygiene and chemistry',
       'Food',
       'Flat',
       'Other fees and bills',
@@ -93,16 +93,6 @@ class List extends Component {
       date: '' + (new Date())
     })
 
-    // tasks: this.state.tasks.concat({
-    //   id: this.state.tasks.map(
-    //     task => task.id
-    //   ).reduce(
-    //     (biggest, next) => Math.max(biggest, next),
-    //     0
-    //   ) + 1,
-
-    // }),
-
     this.setState({
       taskInputValue: '',
       error: null
@@ -113,8 +103,8 @@ class List extends Component {
   render() {
 
     return (
-      <div>
-        <p>Add your savings and outgoings</p>
+      <div className="col-md-6">
+        <p>Set your incomings and outgoings</p>
 
         <form onSubmit={this.handleSubmit}>
           <input
@@ -129,7 +119,7 @@ class List extends Component {
                      onChange={this.handleIncomeInputChange}
                      checked={this.state.incomeChecked}
 
-              /> + income:
+              /> + Incomings:
             </label>
             <label>
               <input type="radio" name="Outgoings"
@@ -137,39 +127,44 @@ class List extends Component {
                      checked={this.state.outcomeChecked}
 
 
-              /> - expense:
+              /> - Outgoings:
             </label>
           </div>
 
-          Category :
+          Division:
           <select name="Outgoings" onChange={this.handleOption}>
-            <option value="" disabled selected> - - - choose - - -</option>
+            <option value="" disabled selected>- here choose category -</option>
             {this.state.options.map(option => <option>{option}</option>)}
           </select>
         </form>
 
-        <ul>
+        <table>
+          <thead>
+          <th>Ammount</th>
+          <th>Category</th>
+          <th>Date</th>
+          </thead>
+          <tbody>
           {
             this.state.tasks.map(
               task => (
-                <li key={task.id}>
-                  {task.isOutcome === true && ' - '}
-                  {task.content}
-                  {task.isIncome === true && ' Earnings '}
-                  {' '}
-                  {task.category}
-                  {' '}
-                  {moment(task.date).format('dddd, MMMM Do YYYY')}
-                  <button
-                    data-task-id={task.id}
-                    onClick={this.handleDeleteClick}>
+                <tr>
+                  <td key={task.id}>
+                    {task.isOutcome === true && ' -'}
+                    {(+task.content).toFixed(2)}
+                  </td>
+                  <td> {task.isIncome === true && ' Earnings '} {task.category}</td>
+                  <td>{moment(task.date).format('DD MM YYYY')}</td>
+                  <button data-task-id={task.id}
+                          onClick={this.handleDeleteClick}>
                     Delete
                   </button>
-                </li>
+                </tr>
               )
             )
           }
-        </ul>
+          </tbody>
+        </table>
       </div>
     )
   }

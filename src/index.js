@@ -1,12 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from 'react-router-dom';
 
+import firebase from 'firebase'
 import "react-big-calendar/lib/css/react-big-calendar.css"
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
@@ -20,6 +16,9 @@ import List from './List';
 import registerServiceWorker from './registerServiceWorker';
 import pocketbook from "./img/pocketbook.png"
 
+const handleSignOut = () => {
+  firebase.auth().signOut()
+};
 
 ReactDOM.render(
   <Provider store={store}>
@@ -31,7 +30,7 @@ ReactDOM.render(
 
           }}>
             <img src={pocketbook} className="app-logo" alt="logo"/>
-            <button onClick={this.handleSignOut}>Wyloguj</button>
+            <button onClick={handleSignOut}>Wyloguj</button>
           </div>
           <List/>
           <Charts/>

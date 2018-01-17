@@ -116,7 +116,7 @@ class BarChart extends Component {
       labels: [],
         datasets: [
             {
-                label: 'Incomes',
+                label: 'INCOMES',
                 backgroundColor: '#40BF35',
                 borderColor: '#103D10',
                 borderWidth: 2,
@@ -125,7 +125,7 @@ class BarChart extends Component {
                 data: [incomesTotal]
             },
           {
-            label: 'Expenses',
+            label: 'OUTGOINGS',
             backgroundColor: 'rgba(255,99,132,0.2)',
             borderColor: 'rgba(255,99,132,1)',
             borderWidth: 2,
