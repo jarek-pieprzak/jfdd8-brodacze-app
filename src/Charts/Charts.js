@@ -24,9 +24,6 @@ class Charts extends React.Component {
     }
   }
 
-
-
-
   render() {
     return (
       <div className="col-sm-12 col-md-6">
@@ -38,7 +35,7 @@ class Charts extends React.Component {
                 this.toggle('1');
               }}
             >
-              Budget : pie chart
+              OUTGOINGS STRUCTURE
             </NavLink>
           </NavItem>
           <NavItem>
@@ -48,7 +45,7 @@ class Charts extends React.Component {
                 this.toggle('2');
               }}
             >
-             bar graph
+             BAR CHART
             </NavLink>
           </NavItem>
           <NavItem>
@@ -58,7 +55,7 @@ class Charts extends React.Component {
                 this.toggle('3');
               }}
             >
-             calendar
+             CALENDAR
             </NavLink>
           </NavItem>
         </Nav>
