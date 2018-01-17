@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import BigCalendar from 'react-big-calendar';
-import {ProgressBar} from 'react-bootstrap';
 import firebase from 'firebase'
 import groupBy from 'lodash.groupby'
+import colors from './colors'
 
 
 
@@ -19,12 +19,7 @@ const EventWrapper = props => {
 
   let byCategory = groupBy(props.event.events, 'category');
 
-  console.log(byCategory);
-
-  //
-  // let income = byCategory['Income'].reduce() {
-  //   return
-  // });
+  // console.log(byCategory);
 
   let { Income, ...other } = byCategory
 
@@ -35,27 +30,29 @@ const EventWrapper = props => {
 })
   )
 
-    console.log(outcome)
+    // console.log(outcome)
 
-
-  return (
-    <ProgressBar>
-      {
-        Object.keys(groupBy(props.event.events, 'category')).map((category, index) => (
-          <ProgressBar key={index} now={20}/>
-        ))
-      }
-    </ProgressBar>
-  )
+  const totalOutcome = outcome.reduce((total, next) => total + next.total, 0);
 
   return (
-    <ProgressBar>
-      {
-        props.event.spendings && props.event.spendings.map(
-          spending => <ProgressBar striped bsStyle={spending.type} now={spending.value} key={1}/>
-        )
-      }
-    </ProgressBar>
+
+          <div style={{ display: 'flex'}}>
+            {
+              outcome.map(
+                item => (
+                  <div
+                    style={{
+                      height: 20,
+                      backgroundColor: colors[item.categoryName],
+                      width: ((item.total / totalOutcome) * 100) + '%'
+                    }}
+                    key={item.categoryName}
+                  />
+                )
+              )
+            }
+          </div>
+
   )
 }
 
