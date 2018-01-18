@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
+import {Provider} from 'react-redux'
 
 import firebase from 'firebase'
 import "react-big-calendar/lib/css/react-big-calendar.css"
@@ -22,21 +22,25 @@ const handleSignOut = () => {
 
 ReactDOM.render(
   <Provider store={store}>
-      <div>
+    <div>
 
       <div className="row">
         <Auth>
-          <div style={{
-
-          }}>
+          <div>
             <img src={pocketbook} className="app-logo" alt="logo"/>
             <button onClick={handleSignOut}>Wyloguj</button>
           </div>
-          <List/>
-          <Charts/>
+          <div className={"skew"}>
+            <div className={"unskew"}>
+              <div style={{ minHeight: "50vh"}}>
+                <List/>
+                <Charts/>
+              </div>
+            </div>
+          </div>
         </Auth>
         <div className="col-md-12">
-          <p style={{ paddingTop: 50 }}>&copy; 2017 BrodaczeGroup</p>
+          <p style={{paddingTop: 50}}>&copy; 2017 BrodaczeGroup</p>
         </div>
       </div>
     </div>
