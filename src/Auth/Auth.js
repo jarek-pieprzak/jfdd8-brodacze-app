@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
-import SignInGoogle from "./SignInGoogle";
-import SignInFacebook from "./SignInFacebook"
 
 import pocketbook from "./pocketbook.png"
 import './Auth.css';
@@ -28,7 +26,7 @@ class Auth extends Component {
               You will save some money with us !
             </div>
             {
-              this.state.showSignIn ? {<SignIn/>,<SignInGoogle/>,<SignInFacebook/>} : <SignUp/>
+              this.state.showSignIn ? <SignIn/> : <SignUp/>
             }
             {
               this.state.showSignIn ?

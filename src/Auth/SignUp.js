@@ -54,9 +54,8 @@ class SignUp extends Component {
             required
           />
           </div>
-          <button>Sign up</button>
-          <button>Sign up with Google</button>
-          <button>Sign up with Facebook</button>
+          <button>Sign up via e-mail</button>
+          <button>Sign up via Google account</button>
         </form>
       </div>
     )
