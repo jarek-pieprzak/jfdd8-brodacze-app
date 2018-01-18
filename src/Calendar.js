@@ -19,7 +19,7 @@ const EventWrapper = props => {
 
   let byCategory = groupBy(props.event.events, 'category');
 
-  // console.log(byCategory);
+
 
   let { Income, ...other } = byCategory
 

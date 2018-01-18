@@ -5,6 +5,7 @@ body {
   margin-right: 0;
   padding: 5vh 3vw 5vh 3vw;
   font-family: sans-serif;
+  background-image: url("./img/background.jpg");
 }
 .skew {
   background: #56ab2f;
