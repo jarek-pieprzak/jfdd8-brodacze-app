@@ -26,7 +26,8 @@ class List extends Component {
 
   componentDidMount() {
     const userUid = firebase.auth().currentUser.uid
-    firebase.database().ref('/tasks/' + userUid).on('value', snapshot => this.setState({
+    firebase.database().ref('/tasks/' + userUid).on('value', snapshot =>
+      this.setState({
         tasks: Object.entries(snapshot.val() || {}).map(
           ([key, value]) => ({
             id: key,
@@ -102,7 +103,7 @@ class List extends Component {
   render() {
 
     return (
-      <div>
+      <div className="col-md-6">
         <p>Set your incomings and outgoings</p>
 
         <form onSubmit={this.handleSubmit}>

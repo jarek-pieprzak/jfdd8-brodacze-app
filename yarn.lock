@@ -4713,6 +4713,10 @@ lodash.defaults@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"
 
+lodash.groupby@^4.6.0:
+  version "4.6.0"
+  resolved "https://registry.yarnpkg.com/lodash.groupby/-/lodash.groupby-4.6.0.tgz#0b08a1dcf68397c397855c3239783832df7403d1"
+
 lodash.isfunction@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/lodash.isfunction/-/lodash.isfunction-3.0.8.tgz#4db709fc81bc4a8fd7127a458a5346c5cdce2c6b"
@@ -6203,8 +6207,8 @@ react-overlays@^0.7.0, react-overlays@^0.7.4:
     warning "^3.0.0"
 
 react-popper@^0.7.2:
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-0.7.4.tgz#8649d539837e7c6f47bc9b24c9cf57a404e199a1"
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/react-popper/-/react-popper-0.7.5.tgz#71c25946f291db381231281f6b95729e8b801596"
   dependencies:
     popper.js "^1.12.5"
     prop-types "^15.5.10"

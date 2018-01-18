@@ -73,12 +73,14 @@ class BarChart extends Component {
               ...value
             })
           ).map(
-            item => ({
-              ...item,
-              value: (item.isIncome ? 1 : -1) * parseInt(item.content),
-              category: item.isIncome ? 'Income' : item.category,
-              // value: parseFloat(item.content)
-            })
+            item => {
+              return ({
+                ...item,
+                value: (item.isIncome ? 1 : -1) * parseInt(item.content),
+                category: item.isIncome ? 'Income' : item.category,
+                // value: parseFloat(item.content)
+              });
+            }
           )
         });
       }
