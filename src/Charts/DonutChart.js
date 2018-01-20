@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Doughnut} from 'react-chartjs-2';
 import firebase from 'firebase'
+import colors from '../colors'
 
 class DonutChart extends Component {
   state = {
@@ -75,18 +76,6 @@ class DonutChart extends Component {
     );
 
     // console.log(categoriesWithSums)
-
-    const colors = {
-      'Food': '#C0FC1E',
-      'Commute': '#FF9800',
-      'Health, hygiene and chemistry': '#FF3400',
-      'Relax': '#F5FF1B',
-      'Flat': '#B30046',
-      'Other fees and bills': '#5300A4',
-      'Cloth': '#0089D0',
-      'Other expenses': '#40BF35',
-      'Budget left': '#8b7cb3'
-    }
 
     // console.log(categories)
 

@@ -1,21 +1,31 @@
-
- export default [
+export default [
   {
     'title': '150 PLN rozrywka',
+    spendings: [
+      {
+        type: 'warning', value: 10
+      },
+      {
+        type: 'warning', value: 20
+      },
+      {
+        type: 'danger', value: 40
+      }
+    ],
     'kategoria': 'rozrywka',
-    'start': new Date(2017, 11, 1),
-    'end': new Date(2017, 11, 1)
+    'start': new Date(2018, 0, 5),
+    'end': new Date(2018, 0, 5)
   },
   {
     'title': '250 pln spożywka',
-    'start': new Date(2017, 11, 10),
-    'end': new Date(2017, 11, 10)
+    'start': new Date(2018, 0, 5),
+    'end': new Date(2018, 0, 5)
   },
 
   {
     'title': '120 pln chemia',
-    'start': new Date(2017, 11, 17,),
-    'end': new Date(2017, 11, 17,)
+    'start': new Date(2018, 0, 15,),
+    'end': new Date(2018, 0, 15,)
   }
 
-  ]
+]
