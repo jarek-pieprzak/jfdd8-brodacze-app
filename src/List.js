@@ -166,10 +166,6 @@ class List extends Component {
                            data-task-id={task.id}
                            onClick={this.handleDeleteClick}
                       />
-                      {/*<button data-task-id={task.id}*/}
-                              {/*onClick={this.handleDeleteClick}>*/}
-                          {/*Delete*/}
-                      {/*</button>*/}
                   </td>
                 </tr>
               )
