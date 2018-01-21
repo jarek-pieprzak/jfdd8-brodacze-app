@@ -30,12 +30,13 @@ body {
 
 .header {
     margin-bottom: 5vh;
-    position: relative;
     padding-left: 5vw;
 }
 
-h1 {
+span {
     text-align: center;
+    font-size: 36px;
+    padding-left: 1vw;
 }
 
 .logOutButton {
