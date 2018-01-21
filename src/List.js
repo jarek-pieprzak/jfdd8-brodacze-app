@@ -103,7 +103,7 @@ class List extends Component {
   render() {
 
     return (
-      <div className="col-md-6">
+        <div className="col-md-6 lista" style={{"overflow-y":"scroll"}}>
         <p>Set your incomings and outgoings</p>
 
         <form onSubmit={this.handleSubmit}>
