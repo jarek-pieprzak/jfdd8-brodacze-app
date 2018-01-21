@@ -62,7 +62,6 @@ class SignUp extends Component {
           />
           </div>
           <button>Sign up via e-mail</button>
-          <button onClick={this.signUpGoogle}>Sign up via Google account</button>
         </form>
       </div>
     )

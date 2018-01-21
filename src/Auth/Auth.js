@@ -23,8 +23,10 @@ class Auth extends Component {
                             <div><img src={pocketbook} className="app-logo" alt="logo"/></div>
                             <h1 style={{"text-decoration":"line-through"}}>pocketbook</h1>
                             <div>
+                                <h2>
                                 Welcome to our home budget app !
                                 You will save some money with us !
+                                </h2>
                             </div>
                             {
                                 this.state.showSignIn ? <SignIn/> : <SignUp/>
