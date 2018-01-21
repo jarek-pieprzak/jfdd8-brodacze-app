@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import moment from 'moment'
 import firebase from 'firebase'
+import './List.css'
 
 class List extends Component {
 
@@ -104,14 +105,14 @@ class List extends Component {
 
     return (
       <div className="col-md-6">
-        <p>Set your incomings and outgoings</p>
+        <h3 className="col-md-12">Set your incomings and outgoings</h3>
 
         <form onSubmit={this.handleSubmit}>
           <input
             value={this.state.taskInputValue}
             onChange={this.handleChange}
           />
-          <button>Add</button>
+          <button className="Add">Add</button>
           <p>{this.state.error}</p>
           <div>
             <label>
@@ -131,8 +132,8 @@ class List extends Component {
             </label>
           </div>
 
-          Division:
-          <select name="Outgoings" onChange={this.handleOption}>
+          Division :
+          <select className="List" name="Outgoings" onChange={this.handleOption}>
             <option value="" disabled selected>- here choose category -</option>
             {this.state.options.map(option => <option>{option}</option>)}
           </select>
@@ -155,10 +156,9 @@ class List extends Component {
                   </td>
                   <td> {task.isIncome === true && ' Earnings '} {task.category}</td>
                   <td>{moment(task.date).format('DD MM YYYY')}</td>
-                  <button data-task-id={task.id}
-                          onClick={this.handleDeleteClick}>
-                    Delete
-                  </button>
+                  <button className="del" data-task-id={task.id}>
+                          onClick={this.handleDeleteClick}
+                  <button/>
                 </tr>
               )
             )
