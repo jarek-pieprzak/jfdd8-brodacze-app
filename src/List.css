@@ -71,6 +71,7 @@ label{
   text-align: center;
 }
 .trash {
+  margin-left: 5px;
   height: 13px;
   width: 13px;
   justify-items: center;
