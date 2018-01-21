@@ -30,7 +30,7 @@ ReactDOM.render(
 
           }}>
             <img src={pocketbook} className="app-logo" alt="logo"/>
-            <button onClick={handleSignOut}>Wyloguj</button>
+            <button onClick={handleSignOut}>Log Out</button>
           </div>
           <List/>
           <Charts/>
