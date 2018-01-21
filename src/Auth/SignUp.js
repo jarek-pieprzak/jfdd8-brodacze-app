@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signUp } from '../state/auth';
+// import SignUpGoogle from "./SignUpGoogle";
+import firebase from 'firebase'
 
 class SignUp extends Component {
 
@@ -27,10 +29,15 @@ class SignUp extends Component {
     )
   };
 
+  signUpGoogle = (...args) => dispatch => {
+    var provider = new firebase.auth.GoogleAuthProvider();
+    return firebase.auth().signInWithPopup(provider)
+  };
+
   render() {
     return (
       <div>
-        <h1>Sign Up</h1>
+        <h2>Sign Up</h2>
         {this.state.error && <p style={{ color: 'red' }}>{this.state.error.message}</p>}
         <form
           onSubmit={this.handleSubmit}
@@ -54,7 +61,8 @@ class SignUp extends Component {
             required
           />
           </div>
-          <button>Sign Up</button>
+          <button>Sign up via e-mail</button>
+          <button onClick={this.signUpGoogle}>Sign up via Google account</button>
         </form>
       </div>
     )

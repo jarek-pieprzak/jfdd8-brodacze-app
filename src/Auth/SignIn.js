@@ -30,7 +30,7 @@ class SignIn extends Component {
   render() {
     return (
       <div>
-        <h1>Sign In</h1>
+        <h2>Sign In</h2>
         {this.state.error && <p style={{ color: 'red' }}>{this.state.error.message}</p>}
         <form
           onSubmit={this.handleSubmit}
