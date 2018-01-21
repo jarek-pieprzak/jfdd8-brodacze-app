@@ -26,14 +26,14 @@ ReactDOM.render(
 
       <div className="row">
         <Auth>
-          <div>
+          <div className={"header"}>
             <img src={pocketbook} className="app-logo" alt="logo"/>
-            <button onClick={handleSignOut}>Wyloguj</button>
+            <button onClick={handleSignOut} className={"logOutButton"}>Wyloguj</button>
           </div>
           <div className={"skew"}>
             <div className={"unskew"}>
               <div style={{ minHeight: "50vh"}}>
-                <List/>
+                <List className={"list"}/>
                 <Charts/>
               </div>
             </div>

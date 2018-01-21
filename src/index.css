@@ -3,7 +3,8 @@ body {
   /*margin-bottom: 10vh;*/
   /*margin-left: 0;*/
   /*margin-right: 0;*/
-  padding: 5vh 3vw 5vh 3vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
   font-family: sans-serif;
 }
 .skew {
@@ -23,4 +24,18 @@ body {
 }
 .unskew1 {
   transform: skewY(-2deg);
+}
+
+.header {
+    margin-bottom: 5vh;
+    position: relative;
+    padding-left: 5vw;
+}
+
+.logOutButton {
+
+}
+
+.lista {
+    padding-left: 5vw;
 }
