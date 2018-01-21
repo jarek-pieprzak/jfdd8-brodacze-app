@@ -1,6 +1,7 @@
 table {
   width: 100%;
   border-bottom:  black solid 1.5px;
+  margin-left: 15px;
 }
 th, td{
   padding: 4px 10px 4px;
@@ -37,7 +38,9 @@ button{
 }
 
 .val {
-  width: 75%;
+  width: 60%;
+  margin-left: 15px;
+
 }
 .add {
   width: 22%;
