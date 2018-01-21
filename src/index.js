@@ -40,7 +40,7 @@ ReactDOM.render(
           </div>
         </Auth>
         <div className="col-md-12 copright">
-          <p style={{paddingTop: 50}}>&copy; 2017 BrodaczeGroup</p>
+          <p>&copy; 2017 BrodaczeGroup</p>
         </div>
       </div>
     </div>
