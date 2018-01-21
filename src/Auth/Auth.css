@@ -1,11 +1,35 @@
-/*div {*/
-    /*text-align: center;*/
-    /*background: #56ab2f;*/
-    /*background: -webkit-linear-gradient(to left, #a8e063, #56ab2f);*/
-    /*background: linear-gradient(to left, #a8e063, #56ab2f);*/
-/*}*/
+body {
+    padding: 0px;
+}
 
 img {
     width: 6em;
     height: 6em
+}
+
+div.background {
+    height: 90vh;
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+    background: url(coins.jpg);
+    background-size: cover;
+    border: 2px solid black;
+    border-radius: 45px;
+}
+
+div.transbox {
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 45px;
+    opacity: 0.8;
+}
+
+div.transbox h1 {
+    font-weight: bold;
+    color: #000000;
 }
