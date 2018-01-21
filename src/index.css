@@ -34,6 +34,10 @@ body {
     padding-left: 5vw;
 }
 
+h1 {
+    text-align: center;
+}
+
 .logOutButton {
     float: right;
     margin-right: 5vw;
@@ -60,3 +64,4 @@ tbody:last-child {
     maring-left: 0px;
     margin-right: 0px;
 }
+
