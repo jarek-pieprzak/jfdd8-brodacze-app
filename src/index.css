@@ -13,7 +13,7 @@ body {
   background: linear-gradient(to left, #a8e063, #56ab2f);
   transform: skewY(2deg);
     padding-top: 5vh;
-    padding-bottom: 5vh;
+    padding-bottom: 10vh;
 }
 
 .skew1 {
