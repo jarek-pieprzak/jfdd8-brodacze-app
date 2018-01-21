@@ -28,7 +28,7 @@ ReactDOM.render(
         <Auth>
           <div className={"header"}>
             <img src={pocketbook} className="app-logo" alt="logo"/>
-            <button onClick={handleSignOut} className={"logOutButton"}>Wyloguj</button>
+            <button onClick={handleSignOut} className={"logOutButton"}>Log Out</button>
           </div>
           <div className={"skew"}>
             <div className={"unskew"}>
@@ -39,7 +39,7 @@ ReactDOM.render(
             </div>
           </div>
         </Auth>
-        <div className="col-md-12">
+        <div className="col-md-12 copright">
           <p style={{paddingTop: 50}}>&copy; 2017 BrodaczeGroup</p>
         </div>
       </div>
