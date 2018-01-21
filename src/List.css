@@ -1,3 +1,6 @@
+.table {
+  padding: 15px;
+}
 table {
   width: 100%;
   border-bottom:  black solid 1.5px;
@@ -37,7 +40,7 @@ button{
 }
 
 .val {
-  width: 60%;
+  width: 75%;
 }
 
 .add {

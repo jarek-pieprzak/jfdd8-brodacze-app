@@ -3,6 +3,8 @@ import moment from 'moment'
 import firebase from 'firebase'
 import './List.css'
 
+
+
 class List extends Component {
 
   state = {
@@ -104,78 +106,81 @@ class List extends Component {
   render() {
 
     return (
-      <div className="col-md-6">
-        <h3 className="col-md-12">Set your incomings and outgoings</h3>
+        <div className="table">
+            <div className="col-sm-12 col-md-6 charts">
+                <h3 className="col-sm-12">Set your incomings and outgoings</h3>
 
-        <form className="form"
-            onSubmit={this.handleSubmit}>
-          <input className="val"
-            value={this.state.taskInputValue}
-            onChange={this.handleChange}
-          />
-          <button className="add">Add</button>
-          <p>{this.state.error}</p>
-          <div className="division">
-            <label>
-              <input type="radio" name="digits"
-                     onChange={this.handleIncomeInputChange}
-                     checked={this.state.incomeChecked}
+                <form className="form"
+                      onSubmit={this.handleSubmit}>
+                    <input className="val"
+                           value={this.state.taskInputValue}
+                           onChange={this.handleChange}
+                    />
+                    <button className="add">Add</button>
+                    <p>{this.state.error}</p>
+                    <div className="division">
+                        <label>
+                            <input type="radio" name="digits"
+                                   onChange={this.handleIncomeInputChange}
+                                   checked={this.state.incomeChecked}
 
-              /> Incomings ( + )
-            </label>
-            <label>
-              <input type="radio" name="Outgoings"
-                     onChange={this.handleOutcomeInputChange}
-                     checked={this.state.outcomeChecked}
-
-
-              />Outgoings ( - )
-            </label>
-          </div>
-          <div className="category">Division
-               <select name="Outgoings" onChange={this.handleOption}>
-                  <option value="" disabled selected>- here choose category -</option>
-                  {this.state.options.map(option => <option>{option}</option>)}
-              </select>
-          </div>
+                            /> Incomings ( + )
+                        </label>
+                        <label>
+                            <input type="radio" name="Outgoings"
+                                   onChange={this.handleOutcomeInputChange}
+                                   checked={this.state.outcomeChecked}
 
 
-        </form>
-
-        <table>
-          <thead>
-          <th>Ammount</th>
-          <th>Category</th>
-          <th>Date</th>
-          </thead>
-          <tbody>
-          {
-            this.state.tasks.map(
-              task => (
-                <tr>
-                  <td className="money" key={task.id}>
-                    {task.isOutcome === true && ' -'}
-                    {(+task.content).toFixed(2)}
-                  </td>
-                  <td> {task.isIncome === true && ' Earnings '} {task.category}</td>
-                  <td>{moment(task.date).format('DD-MM-YYYY')}
-
-                      <button
-                          data-task-id={task.id}
-                          onClick={this.handleDeleteClick}>Delete
-                      </button>
-                  </td>
-                    <img src="img/tb.png" alt=""/>
+                            />Outgoings ( - )
+                        </label>
+                    </div>
+                    <div className="category">Division
+                        <select name="Outgoings" onChange={this.handleOption}>
+                            <option value="" disabled selected>- here choose category -</option>
+                            {this.state.options.map(option => <option>{option}</option>)}
+                        </select>
+                    </div>
 
 
+                </form>
 
-                </tr>
-              )
-            )
-          }
-          </tbody>
-        </table>
-      </div>
+                <table>
+                    <thead>
+                    <th>Ammount</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    </thead>
+                    <tbody>
+                    {
+                        this.state.tasks.map(
+                            task => (
+                                <tr>
+                                    <td className="money" key={task.id}>
+                                        {task.isOutcome === true && ' -'}
+                                        {(+task.content).toFixed(2)}
+                                    </td>
+                                    <td> {task.isIncome === true && ' Earnings '} {task.category}</td>
+                                    <td>{moment(task.date).format('DD-MM-YYYY')}
+
+                                        <button
+                                            data-task-id={task.id}
+                                            onClick={this.handleDeleteClick}>Delete
+                                        </button>
+                                    </td>
+                                    <img src="img/tb.png" alt=""/>
+
+
+
+                                </tr>
+                            )
+                        )
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
     )
   }
 }
