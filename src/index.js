@@ -26,8 +26,9 @@ ReactDOM.render(
 
       <div className="row">
         <Auth>
-          <div className={"header"}>
+          <div className={"header row"}>
             <img src={pocketbook} className="app-logo" alt="logo"/>
+            <span style={{"text-decoration":"line-through"}}>pocketbook</span>
             <button onClick={handleSignOut} className={"logOutButton"}>Log Out</button>
           </div>
           <div className={"skew"}>

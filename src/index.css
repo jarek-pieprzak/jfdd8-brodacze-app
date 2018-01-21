@@ -13,7 +13,7 @@ body {
   background: linear-gradient(to left, #a8e063, #56ab2f);
   transform: skewY(2deg);
     padding-top: 5vh;
-    padding-bottom: 9vh;
+    padding-bottom: 10vh;
 }
 
 .skew1 {
@@ -30,8 +30,13 @@ body {
 
 .header {
     margin-bottom: 5vh;
-    position: relative;
     padding-left: 5vw;
+}
+
+span {
+    text-align: center;
+    font-size: 36px;
+    padding-left: 1vw;
 }
 
 .logOutButton {
@@ -59,5 +64,5 @@ tbody:last-child {
 .row {
     maring-left: 0px;
     margin-right: 0px;
-    padding-top: 2vh;
 }
+
