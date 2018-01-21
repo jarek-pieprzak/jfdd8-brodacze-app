@@ -99,7 +99,7 @@ class Calendar extends Component {
 
     return (
 
-      <div style={{height: 600}}>
+      <div style={{ height: '40vh' }}>
         <BigCalendar
           {...this.props}
           events={groupedEvents}
