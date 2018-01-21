@@ -89,7 +89,7 @@ class DonutChart extends Component {
     };
 
     return (
-      <div>
+      <div style={{ height: '40vh' }}>
         <Doughnut data={data}/>
       </div>
     );
