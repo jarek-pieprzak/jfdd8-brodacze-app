@@ -1,13 +1,12 @@
 table {
   width: 100%;
   border-bottom:  black solid 1.5px;
-  margin-left: 15px;
 }
 th, td{
   padding: 4px 10px 4px;
 }
 th{
-  background-color: darkgrey;
+  background-color: purple;
   color: white;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -25,8 +24,8 @@ tr.even{
   background-color: #efefef;
 }
 tr:hover{
-  background-color: purple;
-  color: white;
+  background-color: lightgray;
+  color: purple;
   font: bolder;
 }
 button{
@@ -39,9 +38,8 @@ button{
 
 .val {
   width: 60%;
-  margin-left: 15px;
-
 }
+
 .add {
   width: 22%;
 }
