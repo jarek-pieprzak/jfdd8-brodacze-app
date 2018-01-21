@@ -19,9 +19,7 @@ div.background {
 }
 
 div.transbox {
-    width: 50%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 3vh;
     background-color: #ffffff;
     text-align: center;
     border: 1px solid black;
@@ -29,7 +27,11 @@ div.transbox {
     opacity: 0.8;
 }
 
-div.transbox h1 {
-    font-weight: bold;
-    color: #000000;
+span {
+    font-size: 15px;
 }
+
+/*div.transbox h1 {*/
+    /*font-weight: bold;*/
+    /*color: #000000;*/
+/*}*/
