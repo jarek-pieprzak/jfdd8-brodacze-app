@@ -26,7 +26,7 @@ class Charts extends React.Component {
 
   render() {
     return (
-      <div className="col-sm-12 col-md-6">
+      <div className="col-sm-12 col-md-6 charts">
         <Nav tabs>
           <NavItem>
             <NavLink

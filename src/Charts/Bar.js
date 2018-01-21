@@ -137,7 +137,7 @@ class BarChart extends Component {
     };
 
     return (
-      <div style={{ height: '50vh' }}>
+      <div style={{ height: '40vh' }}>
         <Bar
           data={data}
           width={100}
