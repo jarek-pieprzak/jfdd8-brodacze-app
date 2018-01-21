@@ -121,7 +121,7 @@ class List extends Component {
                      onChange={this.handleIncomeInputChange}
                      checked={this.state.incomeChecked}
 
-              /> + Incomings:
+              /> Incomings ( + )
             </label>
             <label>
               <input type="radio" name="Outgoings"
@@ -129,11 +129,11 @@ class List extends Component {
                      checked={this.state.outcomeChecked}
 
 
-              /> - Outgoings:
+              />Outgoings ( - )
             </label>
           </div>
-          <div className="category">Division :
-              <select name="Outgoings" onChange={this.handleOption}>
+          <div className="category">Division
+               <select name="Outgoings" onChange={this.handleOption}>
                   <option value="" disabled selected>- here choose category -</option>
                   {this.state.options.map(option => <option>{option}</option>)}
               </select>
