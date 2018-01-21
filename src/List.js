@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import moment from 'moment'
 import firebase from 'firebase'
 import './List.css'
+import trashIcon from './img/bin.png'
 
 class List extends Component {
 
@@ -160,10 +161,15 @@ class List extends Component {
                   </td>
                   <td> {task.isIncome === true && ' Earnings '} {task.category}</td>
                   <td>{moment(task.date).format('DD-MM-YYYY')}
-                      <button data-task-id={task.id}
-                              onClick={this.handleDeleteClick}>
-                          Delete
-                      </button>
+                      <img className={"trash"}
+                           src={trashIcon}
+                           data-task-id={task.id}
+                           onClick={this.handleDeleteClick}
+                      />
+                      {/*<button data-task-id={task.id}*/}
+                              {/*onClick={this.handleDeleteClick}>*/}
+                          {/*Delete*/}
+                      {/*</button>*/}
                   </td>
                 </tr>
               )

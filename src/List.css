@@ -70,3 +70,8 @@ label{
 .input{
   text-align: center;
 }
+.trash {
+  height: 13px;
+  width: 13px;
+  justify-items: center;
+}
