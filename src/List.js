@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import moment from 'moment'
 import firebase from 'firebase'
+import colors from './colors'
+
+const options = Object.keys(colors).slice(0, -2)
 
 class List extends Component {
 
@@ -10,16 +13,7 @@ class List extends Component {
     checkedTaskIds: [],
     outcomeChecked: false,
     incomeChecked: true,
-    options: [
-      'Other expenses',
-      'Relax',
-      'Commute',
-      'Health, hygiene and chemistry',
-      'Food',
-      'Flat',
-      'Other fees and bills',
-      'Cloths',
-    ],
+    options,
     category: null,
     error: null
   }

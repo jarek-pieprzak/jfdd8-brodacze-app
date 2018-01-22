@@ -5,7 +5,8 @@ export default {
   'Relax': '#F5FF1B',
   'Flat': '#B30046',
   'Other fees and bills': '#5300A4',
-  'Cloth': '#0089D0',
+  'Cloths': '#0089D0',
   'Other expenses': '#40BF35',
-  'Budget left': '#8b7cb3'
+  'Budget left': '#8b7cb3',
+  'Debt': '#f85032'
 }
