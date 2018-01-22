@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "big": "^0.5.2",
     "bootstrap": "^3.3.7",
     "calendar": "^0.1.0",
     "chart.js": "^2.7.1",
