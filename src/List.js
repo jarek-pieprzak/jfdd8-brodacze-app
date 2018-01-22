@@ -125,9 +125,9 @@ class List extends Component {
             </label>
           </div>
 
-          Division:
+          Category:
           <select name="Outgoings" onChange={this.handleOption}>
-            <option value="" disabled selected>- here choose category -</option>
+            <option value="" disabled selected>- - - choose - - -</option>
             {this.state.options.map(option => <option>{option}</option>)}
           </select>
         </form>
