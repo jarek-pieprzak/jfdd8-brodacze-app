@@ -3,7 +3,7 @@ export default {
   'Transport': '#008FD2',
   'Health, hygiene and chemistry': '#FF3400',
   'Relax': '#F5FF1B',
-  'Flat': '#616161',
+  'Flat': '#7b7b7b',
   'Other fees and bills': '#ff377a',
   'Clothes': '#923f1d',
   'Other expenses': '#AD00B3',
