@@ -23,10 +23,10 @@ class Auth extends Component {
                             <div><img src={pocketbook} className="app-logo" alt="logo"/></div>
                             <h1 style={{"text-decoration":"line-through"}}>pocketbook</h1>
                             <div>
-                                <h2>
+                                <span>
                                 Welcome to our home budget app !
                                 You will save some money with us !
-                                </h2>
+                                </span >
                             </div>
                             {
                                 this.state.showSignIn ? <SignIn/> : <SignUp/>
@@ -40,9 +40,9 @@ class Auth extends Component {
                             {
                                 this.state.showSignIn ?
 
-                                    <button onClick={() => this.setState({showSignIn: !this.state.showSignIn})}>
+                                    <button className={'switch'} onClick={() => this.setState({showSignIn: !this.state.showSignIn})}>
                                         Register
-                                    </button> : <button onClick={() => this.setState({showSignIn: !this.state.showSignIn})}>
+                                    </button> : <button className={'switch'} onClick={() => this.setState({showSignIn: !this.state.showSignIn})}>
                                         Log in
                                     </button>
                             }

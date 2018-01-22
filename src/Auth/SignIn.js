@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signIn } from '../state/auth';
+import './SignIn.css'
 
 class SignIn extends Component {
 
@@ -30,7 +31,7 @@ class SignIn extends Component {
   render() {
     return (
       <div>
-        <h2>Sign In</h2>
+        <h3>Sign In</h3>
         {this.state.error && <p style={{ color: 'red' }}>{this.state.error.message}</p>}
         <form
           onSubmit={this.handleSubmit}
@@ -54,7 +55,7 @@ class SignIn extends Component {
             required
           />
           </div>
-          <button>Log in</button>
+          <button className={'button-log'}>Log in</button>
         </form>
       </div>
     )

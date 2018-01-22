@@ -37,7 +37,7 @@ class SignUp extends Component {
   render() {
     return (
       <div>
-        <h2>Sign Up</h2>
+        <h3>Sign Up</h3>
         {this.state.error && <p style={{ color: 'red' }}>{this.state.error.message}</p>}
         <form
           onSubmit={this.handleSubmit}
@@ -61,7 +61,7 @@ class SignUp extends Component {
             required
           />
           </div>
-          <button>Sign up via e-mail</button>
+          <button className={'button-log'}>Sign up via e-mail</button>
         </form>
       </div>
     )
