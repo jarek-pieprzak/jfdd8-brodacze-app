@@ -4,13 +4,14 @@ body {
 
 img {
     width: 6em;
-    height: 6em
+    height: 6em;
 }
 
 div.background {
     height: 90vh;
     width: 75%;
     margin: 0 auto;
+    margin-top: 3vh;
     text-align: center;
     background: url(coins.jpg);
     background-size: cover;
@@ -31,6 +32,13 @@ span {
     font-size: 15px;
 }
 
+.app-logo {
+    margin-top: 3vh;
+}
+
+.switch {
+    margin-bottom: 3vh;
+}
 /*div.transbox h1 {*/
     /*font-weight: bold;*/
     /*color: #000000;*/
